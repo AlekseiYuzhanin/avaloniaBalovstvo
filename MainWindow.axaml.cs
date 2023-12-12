@@ -14,12 +14,14 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
     
-    private async void ClickHandler(object sender, RoutedEventArgs e)
+    /*private async void ClickHandler(object sender, RoutedEventArgs e)
     {
         var box = MessageBoxManager
             .GetMessageBoxStandard("Caption", "Are you sure you would like to delete appender_replace_page_1?",
                 ButtonEnum.YesNoCancel);
 
         var result = await box.ShowAsync();
-    }
+    }*/
+
+    
 }

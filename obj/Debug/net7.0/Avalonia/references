@@ -31,6 +31,18 @@
 /home/alexey/.nuget/packages/microsoft.codeanalysis.common/3.8.0/lib/netcoreapp3.1/Microsoft.CodeAnalysis.dll
 /home/alexey/.nuget/packages/microsoft.codeanalysis.scripting.common/3.8.0/lib/netcoreapp3.1/Microsoft.CodeAnalysis.Scripting.dll
 /opt/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.14/ref/net7.0/Microsoft.CSharp.dll
+/home/alexey/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.0/lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/alexey/.nuget/packages/microsoft.entityframeworkcore/7.0.0/lib/net6.0/Microsoft.EntityFrameworkCore.dll
+/home/alexey/.nuget/packages/microsoft.entityframeworkcore.relational/7.0.0/lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/alexey/.nuget/packages/microsoft.extensions.caching.abstractions/7.0.0/lib/net7.0/Microsoft.Extensions.Caching.Abstractions.dll
+/home/alexey/.nuget/packages/microsoft.extensions.caching.memory/7.0.0/lib/net7.0/Microsoft.Extensions.Caching.Memory.dll
+/home/alexey/.nuget/packages/microsoft.extensions.configuration.abstractions/7.0.0/lib/net7.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/home/alexey/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/7.0.0/lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/alexey/.nuget/packages/microsoft.extensions.dependencyinjection/7.0.0/lib/net7.0/Microsoft.Extensions.DependencyInjection.dll
+/home/alexey/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.0/lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll
+/home/alexey/.nuget/packages/microsoft.extensions.logging/7.0.0/lib/net7.0/Microsoft.Extensions.Logging.dll
+/home/alexey/.nuget/packages/microsoft.extensions.options/7.0.0/lib/net7.0/Microsoft.Extensions.Options.dll
+/home/alexey/.nuget/packages/microsoft.extensions.primitives/7.0.0/lib/net7.0/Microsoft.Extensions.Primitives.dll
 /opt/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.14/ref/net7.0/Microsoft.VisualBasic.Core.dll
 /opt/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.14/ref/net7.0/Microsoft.VisualBasic.dll
 /opt/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.14/ref/net7.0/Microsoft.Win32.Primitives.dll
@@ -39,6 +51,8 @@
 /home/alexey/.nuget/packages/messagebox.avalonia/3.1.5.1/lib/netstandard2.0/MsBox.Avalonia.dll
 /opt/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.14/ref/net7.0/mscorlib.dll
 /opt/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.14/ref/net7.0/netstandard.dll
+/home/alexey/.nuget/packages/npgsql/7.0.0/lib/net7.0/Npgsql.dll
+/home/alexey/.nuget/packages/npgsql.entityframeworkcore.postgresql/7.0.0/lib/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
 /home/alexey/.nuget/packages/skiasharp/2.88.6/lib/net6.0/SkiaSharp.dll
 /opt/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.14/ref/net7.0/System.AppContext.dll
 /opt/dotnet/packs/Microsoft.NETCore.App.Ref/7.0.14/ref/net7.0/System.Buffers.dll
