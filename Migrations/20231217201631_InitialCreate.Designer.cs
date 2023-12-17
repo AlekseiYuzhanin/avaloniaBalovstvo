@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MyAppAvalonia.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20231217193332_InitialCreate")]
+    [Migration("20231217201631_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -99,6 +99,23 @@ namespace MyAppAvalonia.Migrations
                     b.HasKey("RoleId");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            RoleId = 1,
+                            RoleTitle = "Admin"
+                        },
+                        new
+                        {
+                            RoleId = 2,
+                            RoleTitle = "Cooker"
+                        },
+                        new
+                        {
+                            RoleId = 3,
+                            RoleTitle = "Waiter"
+                        });
                 });
 
             modelBuilder.Entity("Shift", b =>
@@ -174,6 +191,107 @@ namespace MyAppAvalonia.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            Fired = false,
+                            RoleId = 1,
+                            UserLogin = "LoginTom",
+                            UserName = "Tom",
+                            UserPassword = "PasswordTom"
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            Fired = false,
+                            RoleId = 2,
+                            UserLogin = "JohnTom",
+                            UserName = "John",
+                            UserPassword = "PasswordJohn"
+                        },
+                        new
+                        {
+                            UserId = 3,
+                            Fired = false,
+                            RoleId = 2,
+                            UserLogin = "LoginPeter",
+                            UserName = "Peter",
+                            UserPassword = "PasswordPeter"
+                        },
+                        new
+                        {
+                            UserId = 4,
+                            Fired = false,
+                            RoleId = 2,
+                            UserLogin = "LoginSam",
+                            UserName = "Sam",
+                            UserPassword = "PasswordSam"
+                        },
+                        new
+                        {
+                            UserId = 5,
+                            Fired = false,
+                            RoleId = 2,
+                            UserLogin = "LoginMarry",
+                            UserName = "Marry",
+                            UserPassword = "PasswordMarry"
+                        },
+                        new
+                        {
+                            UserId = 6,
+                            Fired = false,
+                            RoleId = 2,
+                            UserLogin = "LoginSue",
+                            UserName = "Sue",
+                            UserPassword = "PasswordSue"
+                        },
+                        new
+                        {
+                            UserId = 7,
+                            Fired = false,
+                            RoleId = 3,
+                            UserLogin = "LoginJessy",
+                            UserName = "Jessy",
+                            UserPassword = "PasswordJessy"
+                        },
+                        new
+                        {
+                            UserId = 8,
+                            Fired = false,
+                            RoleId = 3,
+                            UserLogin = "LoginDominic",
+                            UserName = "Dominic",
+                            UserPassword = "PasswordDominic"
+                        },
+                        new
+                        {
+                            UserId = 9,
+                            Fired = false,
+                            RoleId = 3,
+                            UserLogin = "LoginKennedy",
+                            UserName = "Kennedy",
+                            UserPassword = "PasswordKennedy"
+                        },
+                        new
+                        {
+                            UserId = 10,
+                            Fired = false,
+                            RoleId = 3,
+                            UserLogin = "LoginVitya",
+                            UserName = "Vitya",
+                            UserPassword = "PasswordVitya"
+                        },
+                        new
+                        {
+                            UserId = 11,
+                            Fired = true,
+                            RoleId = 3,
+                            UserLogin = "LoginDaniel",
+                            UserName = "Daniel",
+                            UserPassword = "PasswordDaniel"
+                        });
                 });
 
             modelBuilder.Entity("Order", b =>

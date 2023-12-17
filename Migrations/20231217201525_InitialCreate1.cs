@@ -4,10 +4,12 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace MyAppAvalonia.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitialCreate1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -147,6 +149,34 @@ namespace MyAppAvalonia.Migrations
                         principalTable: "Orders",
                         principalColumn: "OrderId",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Roles",
+                columns: new[] { "RoleId", "RoleTitle" },
+                values: new object[,]
+                {
+                    { 1, "Admin" },
+                    { 2, "Cooker" },
+                    { 3, "Waiter" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "UserId", "Fired", "RoleId", "UserLogin", "UserName", "UserPassword" },
+                values: new object[,]
+                {
+                    { 1, false, 1, "LoginTom", "Tom", "PasswordTom" },
+                    { 2, false, 2, "JohnTom", "John", "PasswordJohn" },
+                    { 3, false, 2, "LoginPeter", "Peter", "PasswordPeter" },
+                    { 4, false, 2, "LoginSam", "Sam", "PasswordSam" },
+                    { 5, false, 2, "LoginMarry", "Marry", "PasswordMarry" },
+                    { 6, false, 2, "LoginSue", "Sue", "PasswordSue" },
+                    { 7, false, 3, "LoginJessy", "Jessy", "PasswordJessy" },
+                    { 8, false, 3, "LoginDominic", "Dominic", "PasswordDominic" },
+                    { 9, false, 3, "LoginKennedy", "Kennedy", "PasswordKennedy" },
+                    { 10, false, 3, "LoginVitya", "Vitya", "PasswordVitya" },
+                    { 11, false, 3, "LoginDaniel", "Daniel", "PasswordDaniel" }
                 });
 
             migrationBuilder.CreateIndex(
