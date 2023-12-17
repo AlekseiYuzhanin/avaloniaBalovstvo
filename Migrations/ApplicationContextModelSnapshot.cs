@@ -29,8 +29,8 @@ namespace MyAppAvalonia.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("DishId"));
 
-                    b.Property<decimal>("DishPrice")
-                        .HasColumnType("numeric");
+                    b.Property<double>("DishPrice")
+                        .HasColumnType("double precision");
 
                     b.Property<string>("DishTitle")
                         .HasColumnType("text");
@@ -38,6 +38,102 @@ namespace MyAppAvalonia.Migrations
                     b.HasKey("DishId");
 
                     b.ToTable("Dishes");
+
+                    b.HasData(
+                        new
+                        {
+                            DishId = 1,
+                            DishPrice = 200.0,
+                            DishTitle = "Картошка"
+                        },
+                        new
+                        {
+                            DishId = 2,
+                            DishPrice = 200.0,
+                            DishTitle = "Котлета"
+                        },
+                        new
+                        {
+                            DishId = 3,
+                            DishPrice = 200.0,
+                            DishTitle = "Кола"
+                        },
+                        new
+                        {
+                            DishId = 4,
+                            DishPrice = 200.0,
+                            DishTitle = "Квас"
+                        },
+                        new
+                        {
+                            DishId = 5,
+                            DishPrice = 200.0,
+                            DishTitle = "Морс"
+                        },
+                        new
+                        {
+                            DishId = 6,
+                            DishPrice = 200.0,
+                            DishTitle = "Плов"
+                        },
+                        new
+                        {
+                            DishId = 7,
+                            DishPrice = 200.0,
+                            DishTitle = "Пицца"
+                        },
+                        new
+                        {
+                            DishId = 8,
+                            DishPrice = 200.0,
+                            DishTitle = "Доширак"
+                        },
+                        new
+                        {
+                            DishId = 9,
+                            DishPrice = 200.0,
+                            DishTitle = "Ролтон"
+                        },
+                        new
+                        {
+                            DishId = 10,
+                            DishPrice = 200.0,
+                            DishTitle = "Пепси"
+                        });
+                });
+
+            modelBuilder.Entity("DishStatus", b =>
+                {
+                    b.Property<int>("DishStatusId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("DishStatusId"));
+
+                    b.Property<string>("StatusTitle")
+                        .HasColumnType("text");
+
+                    b.HasKey("DishStatusId");
+
+                    b.ToTable("DishStatuses");
+
+                    b.HasData(
+                        new
+                        {
+                            DishStatusId = 1
+                        },
+                        new
+                        {
+                            DishStatusId = 2
+                        },
+                        new
+                        {
+                            DishStatusId = 3
+                        },
+                        new
+                        {
+                            DishStatusId = 4
+                        });
                 });
 
             modelBuilder.Entity("Order", b =>
@@ -65,6 +161,88 @@ namespace MyAppAvalonia.Migrations
                     b.HasIndex("ShiftId");
 
                     b.ToTable("Orders");
+
+                    b.HasData(
+                        new
+                        {
+                            OrderId = 1,
+                            ClientName = "Client 1",
+                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3224),
+                            Payed = false,
+                            ShiftId = 1
+                        },
+                        new
+                        {
+                            OrderId = 2,
+                            ClientName = "Client 2",
+                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3226),
+                            Payed = true,
+                            ShiftId = 2
+                        },
+                        new
+                        {
+                            OrderId = 3,
+                            ClientName = "Client 3",
+                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3227),
+                            Payed = true,
+                            ShiftId = 3
+                        },
+                        new
+                        {
+                            OrderId = 4,
+                            ClientName = "Client 4",
+                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3228),
+                            Payed = true,
+                            ShiftId = 4
+                        },
+                        new
+                        {
+                            OrderId = 5,
+                            ClientName = "Client 5",
+                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3228),
+                            Payed = true,
+                            ShiftId = 1
+                        },
+                        new
+                        {
+                            OrderId = 6,
+                            ClientName = "Client 6",
+                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3229),
+                            Payed = true,
+                            ShiftId = 2
+                        },
+                        new
+                        {
+                            OrderId = 7,
+                            ClientName = "Client 7",
+                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3230),
+                            Payed = true,
+                            ShiftId = 3
+                        },
+                        new
+                        {
+                            OrderId = 8,
+                            ClientName = "Client 8",
+                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3230),
+                            Payed = true,
+                            ShiftId = 4
+                        },
+                        new
+                        {
+                            OrderId = 9,
+                            ClientName = "Client 9",
+                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3231),
+                            Payed = false,
+                            ShiftId = 5
+                        },
+                        new
+                        {
+                            OrderId = 10,
+                            ClientName = "Client 10",
+                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3232),
+                            Payed = false,
+                            ShiftId = 6
+                        });
                 });
 
             modelBuilder.Entity("OrderDish", b =>
@@ -75,9 +253,14 @@ namespace MyAppAvalonia.Migrations
                     b.Property<int>("DishId")
                         .HasColumnType("integer");
 
+                    b.Property<int>("DishStatusId")
+                        .HasColumnType("integer");
+
                     b.HasKey("OrderId", "DishId");
 
                     b.HasIndex("DishId");
+
+                    b.HasIndex("DishStatusId");
 
                     b.ToTable("OrderDishes");
                 });
@@ -126,15 +309,59 @@ namespace MyAppAvalonia.Migrations
                     b.Property<DateTime>("ShiftDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<TimeSpan>("ShiftTimeEnd")
-                        .HasColumnType("interval");
+                    b.Property<DateTime>("ShiftTimeEnd")
+                        .HasColumnType("timestamp with time zone");
 
-                    b.Property<TimeSpan>("ShiftTimeStart")
-                        .HasColumnType("interval");
+                    b.Property<DateTime>("ShiftTimeStart")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("ShiftId");
 
                     b.ToTable("Shift");
+
+                    b.HasData(
+                        new
+                        {
+                            ShiftId = 1,
+                            ShiftDate = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3173),
+                            ShiftTimeEnd = new DateTime(2023, 12, 18, 7, 8, 26, 244, DateTimeKind.Utc).AddTicks(3179),
+                            ShiftTimeStart = new DateTime(2023, 12, 18, 1, 8, 26, 244, DateTimeKind.Utc).AddTicks(3174)
+                        },
+                        new
+                        {
+                            ShiftId = 2,
+                            ShiftDate = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3181),
+                            ShiftTimeEnd = new DateTime(2023, 12, 18, 7, 8, 26, 244, DateTimeKind.Utc).AddTicks(3181),
+                            ShiftTimeStart = new DateTime(2023, 12, 18, 1, 8, 26, 244, DateTimeKind.Utc).AddTicks(3181)
+                        },
+                        new
+                        {
+                            ShiftId = 3,
+                            ShiftDate = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3182),
+                            ShiftTimeEnd = new DateTime(2023, 12, 18, 7, 8, 26, 244, DateTimeKind.Utc).AddTicks(3183),
+                            ShiftTimeStart = new DateTime(2023, 12, 18, 1, 8, 26, 244, DateTimeKind.Utc).AddTicks(3182)
+                        },
+                        new
+                        {
+                            ShiftId = 4,
+                            ShiftDate = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3184),
+                            ShiftTimeEnd = new DateTime(2023, 12, 18, 7, 8, 26, 244, DateTimeKind.Utc).AddTicks(3184),
+                            ShiftTimeStart = new DateTime(2023, 12, 18, 1, 8, 26, 244, DateTimeKind.Utc).AddTicks(3184)
+                        },
+                        new
+                        {
+                            ShiftId = 5,
+                            ShiftDate = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3185),
+                            ShiftTimeEnd = new DateTime(2023, 12, 18, 7, 8, 26, 244, DateTimeKind.Utc).AddTicks(3186),
+                            ShiftTimeStart = new DateTime(2023, 12, 18, 1, 8, 26, 244, DateTimeKind.Utc).AddTicks(3185)
+                        },
+                        new
+                        {
+                            ShiftId = 6,
+                            ShiftDate = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3187),
+                            ShiftTimeEnd = new DateTime(2023, 12, 18, 7, 8, 26, 244, DateTimeKind.Utc).AddTicks(3187),
+                            ShiftTimeStart = new DateTime(2023, 12, 18, 1, 8, 26, 244, DateTimeKind.Utc).AddTicks(3187)
+                        });
                 });
 
             modelBuilder.Entity("ShiftAssignment", b =>
@@ -310,6 +537,12 @@ namespace MyAppAvalonia.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("DishStatus", "DishStatus")
+                        .WithMany()
+                        .HasForeignKey("DishStatusId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Order", "Order")
                         .WithMany("OrderDishes")
                         .HasForeignKey("OrderId")
@@ -317,6 +550,8 @@ namespace MyAppAvalonia.Migrations
                         .IsRequired();
 
                     b.Navigation("Dish");
+
+                    b.Navigation("DishStatus");
 
                     b.Navigation("Order");
                 });

@@ -39,14 +39,6 @@ public class ApplicationContext : DbContext
         new {UserId = 11, UserName = "Daniel", UserLogin = "LoginDaniel", UserPassword="PasswordDaniel", Fired= true, RoleId=3}
     );
 
-    modelBuilder.Entity<Shift>().HasData(
-        new { ShiftId = 1, ShiftDate = DateTime.Now.Date, ShiftTimeStart = new TimeSpan(8, 0, 0), ShiftTimeEnd = new TimeSpan(16, 0, 0) },
-        new  { ShiftId = 2, ShiftDate = DateTime.Now.Date, ShiftTimeStart = new TimeSpan(16, 0, 0), ShiftTimeEnd = new TimeSpan(0, 0, 0) },
-        new  { ShiftId = 3, ShiftDate = DateTime.Now.Date, ShiftTimeStart = new TimeSpan(8, 0, 0), ShiftTimeEnd = new TimeSpan(16, 0, 0) },
-        new  { ShiftId = 4, ShiftDate = DateTime.Now.Date, ShiftTimeStart = new TimeSpan(16, 0, 0), ShiftTimeEnd = new TimeSpan(0, 0, 0) },
-        new  { ShiftId = 5, ShiftDate = DateTime.Now.Date, ShiftTimeStart = new TimeSpan(8, 0, 0), ShiftTimeEnd = new TimeSpan(16, 0, 0) },
-        new  { ShiftId = 6, ShiftDate = DateTime.Now.Date, ShiftTimeStart = new TimeSpan(16, 0, 0), ShiftTimeEnd = new TimeSpan(0, 0, 0) }
-    );
 
     modelBuilder.Entity<Dish>().HasData(
         new {DishId = 1, DishTitle = "Картошка", DishPrice = 200.00},
@@ -60,6 +52,36 @@ public class ApplicationContext : DbContext
         new {DishId = 9, DishTitle = "Ролтон", DishPrice = 200.00},
         new {DishId = 10, DishTitle = "Пепси", DishPrice = 200.00}
     );
+
+    modelBuilder.Entity<Shift>().HasData(
+        new {ShiftId = 1, ShiftDate = DateTime.UtcNow, ShiftTimeStart = DateTime.UtcNow.AddHours(4), ShiftTimeEnd = DateTime.UtcNow.AddHours(10)},
+        new {ShiftId = 2, ShiftDate = DateTime.UtcNow, ShiftTimeStart = DateTime.UtcNow.AddHours(4), ShiftTimeEnd = DateTime.UtcNow.AddHours(10)},
+        new {ShiftId = 3, ShiftDate = DateTime.UtcNow, ShiftTimeStart = DateTime.UtcNow.AddHours(4), ShiftTimeEnd = DateTime.UtcNow.AddHours(10)},
+        new {ShiftId = 4, ShiftDate = DateTime.UtcNow, ShiftTimeStart = DateTime.UtcNow.AddHours(4), ShiftTimeEnd = DateTime.UtcNow.AddHours(10)},
+        new {ShiftId = 5, ShiftDate = DateTime.UtcNow, ShiftTimeStart = DateTime.UtcNow.AddHours(4), ShiftTimeEnd = DateTime.UtcNow.AddHours(10)},
+        new {ShiftId = 6, ShiftDate = DateTime.UtcNow, ShiftTimeStart = DateTime.UtcNow.AddHours(4), ShiftTimeEnd = DateTime.UtcNow.AddHours(10)}
+    );
+
+    modelBuilder.Entity<Order>().HasData(
+        new {OrderId = 1, ClientName = "Client 1", Payed = false, ShiftId = 1, OrderTime = DateTime.UtcNow },
+        new {OrderId = 2, ClientName = "Client 2", Payed = true, ShiftId = 2, OrderTime = DateTime.UtcNow },
+        new {OrderId = 3, ClientName = "Client 3", Payed = true, ShiftId = 3, OrderTime = DateTime.UtcNow },
+        new {OrderId = 4, ClientName = "Client 4", Payed = true, ShiftId = 4, OrderTime = DateTime.UtcNow },
+        new {OrderId = 5, ClientName = "Client 5", Payed = true, ShiftId = 1, OrderTime = DateTime.UtcNow},
+        new {OrderId = 6, ClientName = "Client 6", Payed = true, ShiftId = 2, OrderTime = DateTime.UtcNow },
+        new {OrderId = 7, ClientName = "Client 7", Payed = true, ShiftId = 3, OrderTime = DateTime.UtcNow },
+        new {OrderId = 8, ClientName = "Client 8", Payed = true, ShiftId = 4, OrderTime = DateTime.UtcNow },
+        new {OrderId = 9, ClientName = "Client 9", Payed = false, ShiftId = 5, OrderTime = DateTime.UtcNow},
+        new {OrderId = 10, ClientName = "Client 10", Payed = false, ShiftId = 6, OrderTime = DateTime.UtcNow }
+    );
+
+    modelBuilder.Entity<DishStatus>().HasData(
+        new {DishStatusId = 1, DishStatusTitle="Принят"},
+        new {DishStatusId = 2, DishStatusTitle="Отказ"},
+        new {DishStatusId = 3, DishStatusTitle="Готовится"},
+        new {DishStatusId = 4, DishStatusTitle="Приготовлен"}
+    );
+
     }
 
     public DbSet<Role> Roles {get;set;} = null!;
@@ -67,6 +89,8 @@ public class ApplicationContext : DbContext
     public DbSet<Shift> Shift {get;set;} = null!;
     public DbSet<ShiftAssignment> ShiftAssignments {get;set;} = null!;
     public DbSet<Order> Orders {get;set;} = null!;
+
+    public DbSet<DishStatus> DishStatuses {get;set;} = null!;
     public DbSet<Dish> Dishes {get;set;} = null!;
     public DbSet<OrderDish> OrderDishes {get;set;} = null!;
 

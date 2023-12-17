@@ -9,7 +9,10 @@ public class Dish
     
     public string? DishTitle { get; set; }
     
-    public decimal DishPrice { get; set; }
+    public double DishPrice { get; set; }
+
+    
+
     
     public ICollection<OrderDish>? OrderDishes { get; set; }
 }
