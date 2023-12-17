@@ -13,7 +13,7 @@ public class OrderDish
     [ForeignKey("Dish")]
     public int DishId { get; set; }
     
-    public Order Order { get; set; }
+    public Order? Order { get; set; }
     
-    public Dish Dish { get; set; }
+    public Dish? Dish { get; set; }
 }

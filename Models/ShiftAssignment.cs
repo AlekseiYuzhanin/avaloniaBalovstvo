@@ -10,10 +10,10 @@ public class ShiftAssignment
     [ForeignKey("User")]
     public int UserId { get; set; }
     
-    public User User { get; set; }
+    public User? User { get; set; }
     
     [ForeignKey("Shift")]
     public int ShiftId { get; set; }
     
-    public Shift Shift { get; set; }
+    public Shift? Shift { get; set; }
 }
