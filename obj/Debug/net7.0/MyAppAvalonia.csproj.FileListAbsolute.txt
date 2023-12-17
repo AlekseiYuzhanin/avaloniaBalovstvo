@@ -148,3 +148,4 @@
 /home/alexey/avalon/MyAppAvalonia/bin/Debug/net7.0/Microsoft.Extensions.Primitives.dll
 /home/alexey/avalon/MyAppAvalonia/bin/Debug/net7.0/Npgsql.dll
 /home/alexey/avalon/MyAppAvalonia/bin/Debug/net7.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/alexey/avalon/MyAppAvalonia/obj/Debug/net7.0/MyAppAvalonia.sourcelink.json
