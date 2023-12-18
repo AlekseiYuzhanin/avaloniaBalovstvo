@@ -82,6 +82,61 @@ public class ApplicationContext : DbContext
         new {DishStatusId = 4, DishStatusTitle="Приготовлен"}
     );
 
+    modelBuilder.Entity<ShiftAssignment>().HasData(
+        new {ShiftAssignmentId = 1, UserId = 2, ShiftId = 1},
+        new {ShiftAssignmentId = 2, UserId = 3, ShiftId = 2},
+        new {ShiftAssignmentId = 3, UserId = 4, ShiftId = 1},
+        new {ShiftAssignmentId = 4, UserId = 5, ShiftId = 2},
+        new {ShiftAssignmentId = 5, UserId = 6, ShiftId = 1},
+        new {ShiftAssignmentId = 6, UserId = 7, ShiftId = 2},
+        new {ShiftAssignmentId = 7, UserId = 2, ShiftId = 1},
+        new {ShiftAssignmentId = 8, UserId = 3, ShiftId = 2},
+        new {ShiftAssignmentId = 9, UserId = 4, ShiftId = 2},
+        new {ShiftAssignmentId = 10, UserId = 5, ShiftId = 1},
+        new {ShiftAssignmentId = 11, UserId = 6, ShiftId = 2},
+        new {ShiftAssignmentId = 12, UserId = 7, ShiftId = 1},
+        new {ShiftAssignmentId = 13, UserId = 8, ShiftId = 2},
+        new {ShiftAssignmentId = 14, UserId = 9, ShiftId = 1},
+        new {ShiftAssignmentId = 15, UserId = 10, ShiftId = 2},
+        new {ShiftAssignmentId = 16, UserId = 11, ShiftId = 1},
+        new {ShiftAssignmentId = 17, UserId = 6, ShiftId = 2},
+        new {ShiftAssignmentId = 18, UserId = 7, ShiftId = 1},
+        new {ShiftAssignmentId = 19, UserId = 8, ShiftId = 2},
+        new {ShiftAssignmentId = 20, UserId = 9, ShiftId = 1}
+    );
+
+    modelBuilder.Entity<OrderDish>().HasData(
+        new {DishId = 1, OrderId = 1, DishStatusId = 1},
+        new {DishId = 2, OrderId = 1, DishStatusId = 1},
+        new {DishId = 3, OrderId = 1, DishStatusId = 1},
+        new {DishId = 4, OrderId = 1, DishStatusId = 1},
+        new {DishId = 5, OrderId = 1, DishStatusId = 1},
+        new {DishId = 6, OrderId = 1, DishStatusId = 1},
+        new {DishId = 7, OrderId = 1, DishStatusId = 1},
+        new {DishId = 8, OrderId = 1, DishStatusId = 1},
+        new {DishId = 9, OrderId = 1, DishStatusId = 1},
+        new {DishId = 10, OrderId = 1, DishStatusId = 1},
+        new {DishId = 1, OrderId = 1, DishStatusId = 1},
+        new {DishId = 2, OrderId = 1, DishStatusId = 1},
+        new {DishId = 3, OrderId = 1, DishStatusId = 1},
+        new {DishId = 4, OrderId = 1, DishStatusId = 1},
+        new {DishId = 5, OrderId = 1, DishStatusId = 1},
+        new {DishId = 6, OrderId = 1, DishStatusId = 1},
+        new {DishId = 7, OrderId = 1, DishStatusId = 1},
+        new {DishId = 8, OrderId = 1, DishStatusId = 1},
+        new {DishId = 9, OrderId = 1, DishStatusId = 1},
+        new {DishId = 10, OrderId = 1, DishStatusId = 1},
+        new {DishId = 1, OrderId = 1, DishStatusId = 1},
+        new {DishId = 2, OrderId = 1, DishStatusId = 1},
+        new {DishId = 3, OrderId = 1, DishStatusId = 1},
+        new {DishId = 4, OrderId = 1, DishStatusId = 1},
+        new {DishId = 5, OrderId = 1, DishStatusId = 1},
+        new {DishId = 6, OrderId = 1, DishStatusId = 1},
+        new {DishId = 7, OrderId = 1, DishStatusId = 1},
+        new {DishId = 8, OrderId = 1, DishStatusId = 1},
+        new {DishId = 9, OrderId = 1, DishStatusId = 1},
+        new {DishId = 10, OrderId = 1, DishStatusId = 1}
+    );
     }
 
     public DbSet<Role> Roles {get;set;} = null!;
