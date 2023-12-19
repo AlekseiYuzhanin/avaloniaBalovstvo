@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MyAppAvalonia.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20231219103632_InitialCreate10")]
+    partial class InitialCreate10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -167,7 +170,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 1,
                             ClientName = "Client 1",
-                            OrderTime = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2055),
+                            OrderTime = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3461),
                             Payed = false,
                             ShiftId = 1
                         },
@@ -175,7 +178,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 2,
                             ClientName = "Client 2",
-                            OrderTime = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2057),
+                            OrderTime = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3462),
                             Payed = true,
                             ShiftId = 2
                         },
@@ -183,7 +186,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 3,
                             ClientName = "Client 3",
-                            OrderTime = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2058),
+                            OrderTime = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3463),
                             Payed = true,
                             ShiftId = 3
                         },
@@ -191,7 +194,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 4,
                             ClientName = "Client 4",
-                            OrderTime = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2059),
+                            OrderTime = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3464),
                             Payed = true,
                             ShiftId = 4
                         },
@@ -199,7 +202,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 5,
                             ClientName = "Client 5",
-                            OrderTime = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2059),
+                            OrderTime = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3465),
                             Payed = true,
                             ShiftId = 1
                         },
@@ -207,7 +210,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 6,
                             ClientName = "Client 6",
-                            OrderTime = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2060),
+                            OrderTime = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3466),
                             Payed = true,
                             ShiftId = 2
                         },
@@ -215,7 +218,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 7,
                             ClientName = "Client 7",
-                            OrderTime = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2061),
+                            OrderTime = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3467),
                             Payed = true,
                             ShiftId = 3
                         },
@@ -223,7 +226,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 8,
                             ClientName = "Client 8",
-                            OrderTime = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2062),
+                            OrderTime = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3468),
                             Payed = true,
                             ShiftId = 4
                         },
@@ -231,7 +234,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 9,
                             ClientName = "Client 9",
-                            OrderTime = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2063),
+                            OrderTime = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3469),
                             Payed = false,
                             ShiftId = 5
                         },
@@ -239,7 +242,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 10,
                             ClientName = "Client 10",
-                            OrderTime = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2063),
+                            OrderTime = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3469),
                             Payed = false,
                             ShiftId = 6
                         });
@@ -543,44 +546,44 @@ namespace MyAppAvalonia.Migrations
                         new
                         {
                             ShiftId = 1,
-                            ShiftDate = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(1994),
-                            ShiftTimeEnd = new DateTime(2023, 12, 19, 20, 42, 26, 737, DateTimeKind.Utc).AddTicks(2002),
-                            ShiftTimeStart = new DateTime(2023, 12, 19, 14, 42, 26, 737, DateTimeKind.Utc).AddTicks(1995)
+                            ShiftDate = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3412),
+                            ShiftTimeEnd = new DateTime(2023, 12, 19, 20, 36, 32, 151, DateTimeKind.Utc).AddTicks(3418),
+                            ShiftTimeStart = new DateTime(2023, 12, 19, 14, 36, 32, 151, DateTimeKind.Utc).AddTicks(3413)
                         },
                         new
                         {
                             ShiftId = 2,
-                            ShiftDate = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2003),
-                            ShiftTimeEnd = new DateTime(2023, 12, 19, 20, 42, 26, 737, DateTimeKind.Utc).AddTicks(2004),
-                            ShiftTimeStart = new DateTime(2023, 12, 19, 14, 42, 26, 737, DateTimeKind.Utc).AddTicks(2004)
+                            ShiftDate = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3420),
+                            ShiftTimeEnd = new DateTime(2023, 12, 19, 20, 36, 32, 151, DateTimeKind.Utc).AddTicks(3420),
+                            ShiftTimeStart = new DateTime(2023, 12, 19, 14, 36, 32, 151, DateTimeKind.Utc).AddTicks(3420)
                         },
                         new
                         {
                             ShiftId = 3,
-                            ShiftDate = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2005),
-                            ShiftTimeEnd = new DateTime(2023, 12, 19, 20, 42, 26, 737, DateTimeKind.Utc).AddTicks(2006),
-                            ShiftTimeStart = new DateTime(2023, 12, 19, 14, 42, 26, 737, DateTimeKind.Utc).AddTicks(2005)
+                            ShiftDate = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3421),
+                            ShiftTimeEnd = new DateTime(2023, 12, 19, 20, 36, 32, 151, DateTimeKind.Utc).AddTicks(3422),
+                            ShiftTimeStart = new DateTime(2023, 12, 19, 14, 36, 32, 151, DateTimeKind.Utc).AddTicks(3422)
                         },
                         new
                         {
                             ShiftId = 4,
-                            ShiftDate = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2007),
-                            ShiftTimeEnd = new DateTime(2023, 12, 19, 20, 42, 26, 737, DateTimeKind.Utc).AddTicks(2007),
-                            ShiftTimeStart = new DateTime(2023, 12, 19, 14, 42, 26, 737, DateTimeKind.Utc).AddTicks(2007)
+                            ShiftDate = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3423),
+                            ShiftTimeEnd = new DateTime(2023, 12, 19, 20, 36, 32, 151, DateTimeKind.Utc).AddTicks(3424),
+                            ShiftTimeStart = new DateTime(2023, 12, 19, 14, 36, 32, 151, DateTimeKind.Utc).AddTicks(3423)
                         },
                         new
                         {
                             ShiftId = 5,
-                            ShiftDate = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2008),
-                            ShiftTimeEnd = new DateTime(2023, 12, 19, 20, 42, 26, 737, DateTimeKind.Utc).AddTicks(2009),
-                            ShiftTimeStart = new DateTime(2023, 12, 19, 14, 42, 26, 737, DateTimeKind.Utc).AddTicks(2009)
+                            ShiftDate = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3425),
+                            ShiftTimeEnd = new DateTime(2023, 12, 19, 20, 36, 32, 151, DateTimeKind.Utc).AddTicks(3425),
+                            ShiftTimeStart = new DateTime(2023, 12, 19, 14, 36, 32, 151, DateTimeKind.Utc).AddTicks(3425)
                         },
                         new
                         {
                             ShiftId = 6,
-                            ShiftDate = new DateTime(2023, 12, 19, 10, 42, 26, 737, DateTimeKind.Utc).AddTicks(2010),
-                            ShiftTimeEnd = new DateTime(2023, 12, 19, 20, 42, 26, 737, DateTimeKind.Utc).AddTicks(2011),
-                            ShiftTimeStart = new DateTime(2023, 12, 19, 14, 42, 26, 737, DateTimeKind.Utc).AddTicks(2010)
+                            ShiftDate = new DateTime(2023, 12, 19, 10, 36, 32, 151, DateTimeKind.Utc).AddTicks(3426),
+                            ShiftTimeEnd = new DateTime(2023, 12, 19, 20, 36, 32, 151, DateTimeKind.Utc).AddTicks(3427),
+                            ShiftTimeStart = new DateTime(2023, 12, 19, 14, 36, 32, 151, DateTimeKind.Utc).AddTicks(3426)
                         });
                 });
 
@@ -737,14 +740,8 @@ namespace MyAppAvalonia.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserId"));
 
-                    b.Property<byte[]>("ContractPicture")
-                        .HasColumnType("bytea");
-
                     b.Property<bool>("Fired")
                         .HasColumnType("boolean");
-
-                    b.Property<byte[]>("ProfilePicture")
-                        .HasColumnType("bytea");
 
                     b.Property<int>("RoleId")
                         .HasColumnType("integer");

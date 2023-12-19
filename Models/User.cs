@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -11,8 +12,13 @@ public class User
     public string? UserLogin { get; set; }
     
     public string? UserPassword { get; set; }
-    
+
+    [DefaultValue(true)] 
+
     public bool Fired { get; set; }
+    public byte[]? ProfilePicture { get; set; } 
+
+    public byte[]? ContractPicture { get; set; } 
     
     [ForeignKey("Role")]
     public int RoleId { get; set; }
