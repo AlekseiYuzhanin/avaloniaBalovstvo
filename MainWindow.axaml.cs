@@ -43,7 +43,18 @@ public partial class MainWindow : Window
         {
             if(user.Role.RoleTitle.ToString() == "Admin")
             {
-                Console.WriteLine("YESYESYES");
+                new AdminWindow().Show();
+                Close();
+            }
+            if(user.Role.RoleTitle.ToString() == "Waiter")
+            {
+                new WaiterWindow().Show();
+                Close();
+            }
+            if(user.Role.RoleTitle.ToString() == "Cooker")
+            {
+                new CookerWindow().Show();
+                Close();
             }
         }
         if(string.IsNullOrWhiteSpace(login?.Text) && string.IsNullOrWhiteSpace(password?.Text))
@@ -56,10 +67,6 @@ public partial class MainWindow : Window
             var result = userNotExistsbox.ShowAsync();
             return;
         }
-
     }
-
     }
-
-    
 }
