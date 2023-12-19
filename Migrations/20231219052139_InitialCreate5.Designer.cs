@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MyAppAvalonia.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20231217210826_InitialCreate1")]
-    partial class InitialCreate1
+    [Migration("20231219052139_InitialCreate5")]
+    partial class InitialCreate5
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -170,7 +170,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 1,
                             ClientName = "Client 1",
-                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3224),
+                            OrderTime = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1374),
                             Payed = false,
                             ShiftId = 1
                         },
@@ -178,7 +178,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 2,
                             ClientName = "Client 2",
-                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3226),
+                            OrderTime = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1375),
                             Payed = true,
                             ShiftId = 2
                         },
@@ -186,7 +186,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 3,
                             ClientName = "Client 3",
-                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3227),
+                            OrderTime = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1376),
                             Payed = true,
                             ShiftId = 3
                         },
@@ -194,7 +194,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 4,
                             ClientName = "Client 4",
-                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3228),
+                            OrderTime = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1377),
                             Payed = true,
                             ShiftId = 4
                         },
@@ -202,7 +202,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 5,
                             ClientName = "Client 5",
-                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3228),
+                            OrderTime = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1378),
                             Payed = true,
                             ShiftId = 1
                         },
@@ -210,7 +210,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 6,
                             ClientName = "Client 6",
-                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3229),
+                            OrderTime = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1378),
                             Payed = true,
                             ShiftId = 2
                         },
@@ -218,7 +218,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 7,
                             ClientName = "Client 7",
-                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3230),
+                            OrderTime = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1379),
                             Payed = true,
                             ShiftId = 3
                         },
@@ -226,7 +226,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 8,
                             ClientName = "Client 8",
-                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3230),
+                            OrderTime = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1380),
                             Payed = true,
                             ShiftId = 4
                         },
@@ -234,7 +234,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 9,
                             ClientName = "Client 9",
-                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3231),
+                            OrderTime = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1381),
                             Payed = false,
                             ShiftId = 5
                         },
@@ -242,7 +242,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 10,
                             ClientName = "Client 10",
-                            OrderTime = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3232),
+                            OrderTime = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1382),
                             Payed = false,
                             ShiftId = 6
                         });
@@ -250,8 +250,11 @@ namespace MyAppAvalonia.Migrations
 
             modelBuilder.Entity("OrderDish", b =>
                 {
-                    b.Property<int>("OrderId")
+                    b.Property<int>("OrderDishId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("OrderDishId"));
 
                     b.Property<int>("DishId")
                         .HasColumnType("integer");
@@ -259,13 +262,230 @@ namespace MyAppAvalonia.Migrations
                     b.Property<int>("DishStatusId")
                         .HasColumnType("integer");
 
-                    b.HasKey("OrderId", "DishId");
+                    b.Property<int>("OrderId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("OrderDishId");
 
                     b.HasIndex("DishId");
 
                     b.HasIndex("DishStatusId");
 
+                    b.HasIndex("OrderId");
+
                     b.ToTable("OrderDishes");
+
+                    b.HasData(
+                        new
+                        {
+                            OrderDishId = 1,
+                            DishId = 1,
+                            DishStatusId = 1,
+                            OrderId = 1
+                        },
+                        new
+                        {
+                            OrderDishId = 2,
+                            DishId = 2,
+                            DishStatusId = 1,
+                            OrderId = 2
+                        },
+                        new
+                        {
+                            OrderDishId = 3,
+                            DishId = 3,
+                            DishStatusId = 1,
+                            OrderId = 3
+                        },
+                        new
+                        {
+                            OrderDishId = 4,
+                            DishId = 4,
+                            DishStatusId = 1,
+                            OrderId = 4
+                        },
+                        new
+                        {
+                            OrderDishId = 5,
+                            DishId = 5,
+                            DishStatusId = 1,
+                            OrderId = 5
+                        },
+                        new
+                        {
+                            OrderDishId = 6,
+                            DishId = 6,
+                            DishStatusId = 1,
+                            OrderId = 6
+                        },
+                        new
+                        {
+                            OrderDishId = 7,
+                            DishId = 7,
+                            DishStatusId = 1,
+                            OrderId = 7
+                        },
+                        new
+                        {
+                            OrderDishId = 8,
+                            DishId = 8,
+                            DishStatusId = 1,
+                            OrderId = 8
+                        },
+                        new
+                        {
+                            OrderDishId = 9,
+                            DishId = 9,
+                            DishStatusId = 1,
+                            OrderId = 9
+                        },
+                        new
+                        {
+                            OrderDishId = 10,
+                            DishId = 10,
+                            DishStatusId = 1,
+                            OrderId = 10
+                        },
+                        new
+                        {
+                            OrderDishId = 11,
+                            DishId = 1,
+                            DishStatusId = 1,
+                            OrderId = 1
+                        },
+                        new
+                        {
+                            OrderDishId = 12,
+                            DishId = 2,
+                            DishStatusId = 1,
+                            OrderId = 2
+                        },
+                        new
+                        {
+                            OrderDishId = 13,
+                            DishId = 3,
+                            DishStatusId = 1,
+                            OrderId = 3
+                        },
+                        new
+                        {
+                            OrderDishId = 14,
+                            DishId = 4,
+                            DishStatusId = 1,
+                            OrderId = 4
+                        },
+                        new
+                        {
+                            OrderDishId = 15,
+                            DishId = 5,
+                            DishStatusId = 1,
+                            OrderId = 5
+                        },
+                        new
+                        {
+                            OrderDishId = 16,
+                            DishId = 6,
+                            DishStatusId = 1,
+                            OrderId = 6
+                        },
+                        new
+                        {
+                            OrderDishId = 17,
+                            DishId = 7,
+                            DishStatusId = 1,
+                            OrderId = 7
+                        },
+                        new
+                        {
+                            OrderDishId = 18,
+                            DishId = 8,
+                            DishStatusId = 1,
+                            OrderId = 8
+                        },
+                        new
+                        {
+                            OrderDishId = 19,
+                            DishId = 9,
+                            DishStatusId = 1,
+                            OrderId = 9
+                        },
+                        new
+                        {
+                            OrderDishId = 20,
+                            DishId = 10,
+                            DishStatusId = 1,
+                            OrderId = 10
+                        },
+                        new
+                        {
+                            OrderDishId = 21,
+                            DishId = 1,
+                            DishStatusId = 1,
+                            OrderId = 1
+                        },
+                        new
+                        {
+                            OrderDishId = 22,
+                            DishId = 2,
+                            DishStatusId = 1,
+                            OrderId = 2
+                        },
+                        new
+                        {
+                            OrderDishId = 23,
+                            DishId = 3,
+                            DishStatusId = 1,
+                            OrderId = 3
+                        },
+                        new
+                        {
+                            OrderDishId = 24,
+                            DishId = 4,
+                            DishStatusId = 1,
+                            OrderId = 4
+                        },
+                        new
+                        {
+                            OrderDishId = 25,
+                            DishId = 5,
+                            DishStatusId = 1,
+                            OrderId = 5
+                        },
+                        new
+                        {
+                            OrderDishId = 26,
+                            DishId = 6,
+                            DishStatusId = 1,
+                            OrderId = 6
+                        },
+                        new
+                        {
+                            OrderDishId = 27,
+                            DishId = 7,
+                            DishStatusId = 1,
+                            OrderId = 7
+                        },
+                        new
+                        {
+                            OrderDishId = 28,
+                            DishId = 8,
+                            DishStatusId = 1,
+                            OrderId = 8
+                        },
+                        new
+                        {
+                            OrderDishId = 29,
+                            DishId = 9,
+                            DishStatusId = 1,
+                            OrderId = 9
+                        },
+                        new
+                        {
+                            OrderDishId = 30,
+                            DishId = 10,
+                            DishStatusId = 1,
+                            OrderId = 10
+                        });
                 });
 
             modelBuilder.Entity("Role", b =>
@@ -326,44 +546,44 @@ namespace MyAppAvalonia.Migrations
                         new
                         {
                             ShiftId = 1,
-                            ShiftDate = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3173),
-                            ShiftTimeEnd = new DateTime(2023, 12, 18, 7, 8, 26, 244, DateTimeKind.Utc).AddTicks(3179),
-                            ShiftTimeStart = new DateTime(2023, 12, 18, 1, 8, 26, 244, DateTimeKind.Utc).AddTicks(3174)
+                            ShiftDate = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1319),
+                            ShiftTimeEnd = new DateTime(2023, 12, 19, 15, 21, 39, 167, DateTimeKind.Utc).AddTicks(1326),
+                            ShiftTimeStart = new DateTime(2023, 12, 19, 9, 21, 39, 167, DateTimeKind.Utc).AddTicks(1320)
                         },
                         new
                         {
                             ShiftId = 2,
-                            ShiftDate = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3181),
-                            ShiftTimeEnd = new DateTime(2023, 12, 18, 7, 8, 26, 244, DateTimeKind.Utc).AddTicks(3181),
-                            ShiftTimeStart = new DateTime(2023, 12, 18, 1, 8, 26, 244, DateTimeKind.Utc).AddTicks(3181)
+                            ShiftDate = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1328),
+                            ShiftTimeEnd = new DateTime(2023, 12, 19, 15, 21, 39, 167, DateTimeKind.Utc).AddTicks(1328),
+                            ShiftTimeStart = new DateTime(2023, 12, 19, 9, 21, 39, 167, DateTimeKind.Utc).AddTicks(1328)
                         },
                         new
                         {
                             ShiftId = 3,
-                            ShiftDate = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3182),
-                            ShiftTimeEnd = new DateTime(2023, 12, 18, 7, 8, 26, 244, DateTimeKind.Utc).AddTicks(3183),
-                            ShiftTimeStart = new DateTime(2023, 12, 18, 1, 8, 26, 244, DateTimeKind.Utc).AddTicks(3182)
+                            ShiftDate = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1329),
+                            ShiftTimeEnd = new DateTime(2023, 12, 19, 15, 21, 39, 167, DateTimeKind.Utc).AddTicks(1330),
+                            ShiftTimeStart = new DateTime(2023, 12, 19, 9, 21, 39, 167, DateTimeKind.Utc).AddTicks(1330)
                         },
                         new
                         {
                             ShiftId = 4,
-                            ShiftDate = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3184),
-                            ShiftTimeEnd = new DateTime(2023, 12, 18, 7, 8, 26, 244, DateTimeKind.Utc).AddTicks(3184),
-                            ShiftTimeStart = new DateTime(2023, 12, 18, 1, 8, 26, 244, DateTimeKind.Utc).AddTicks(3184)
+                            ShiftDate = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1331),
+                            ShiftTimeEnd = new DateTime(2023, 12, 19, 15, 21, 39, 167, DateTimeKind.Utc).AddTicks(1332),
+                            ShiftTimeStart = new DateTime(2023, 12, 19, 9, 21, 39, 167, DateTimeKind.Utc).AddTicks(1331)
                         },
                         new
                         {
                             ShiftId = 5,
-                            ShiftDate = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3185),
-                            ShiftTimeEnd = new DateTime(2023, 12, 18, 7, 8, 26, 244, DateTimeKind.Utc).AddTicks(3186),
-                            ShiftTimeStart = new DateTime(2023, 12, 18, 1, 8, 26, 244, DateTimeKind.Utc).AddTicks(3185)
+                            ShiftDate = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1333),
+                            ShiftTimeEnd = new DateTime(2023, 12, 19, 15, 21, 39, 167, DateTimeKind.Utc).AddTicks(1333),
+                            ShiftTimeStart = new DateTime(2023, 12, 19, 9, 21, 39, 167, DateTimeKind.Utc).AddTicks(1333)
                         },
                         new
                         {
                             ShiftId = 6,
-                            ShiftDate = new DateTime(2023, 12, 17, 21, 8, 26, 244, DateTimeKind.Utc).AddTicks(3187),
-                            ShiftTimeEnd = new DateTime(2023, 12, 18, 7, 8, 26, 244, DateTimeKind.Utc).AddTicks(3187),
-                            ShiftTimeStart = new DateTime(2023, 12, 18, 1, 8, 26, 244, DateTimeKind.Utc).AddTicks(3187)
+                            ShiftDate = new DateTime(2023, 12, 19, 5, 21, 39, 167, DateTimeKind.Utc).AddTicks(1334),
+                            ShiftTimeEnd = new DateTime(2023, 12, 19, 15, 21, 39, 167, DateTimeKind.Utc).AddTicks(1335),
+                            ShiftTimeStart = new DateTime(2023, 12, 19, 9, 21, 39, 167, DateTimeKind.Utc).AddTicks(1334)
                         });
                 });
 
@@ -388,6 +608,128 @@ namespace MyAppAvalonia.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("ShiftAssignments");
+
+                    b.HasData(
+                        new
+                        {
+                            ShiftAssignmentId = 1,
+                            ShiftId = 1,
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 2,
+                            ShiftId = 2,
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 3,
+                            ShiftId = 1,
+                            UserId = 4
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 4,
+                            ShiftId = 2,
+                            UserId = 5
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 5,
+                            ShiftId = 1,
+                            UserId = 6
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 6,
+                            ShiftId = 2,
+                            UserId = 7
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 7,
+                            ShiftId = 1,
+                            UserId = 2
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 8,
+                            ShiftId = 2,
+                            UserId = 3
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 9,
+                            ShiftId = 2,
+                            UserId = 4
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 10,
+                            ShiftId = 1,
+                            UserId = 5
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 11,
+                            ShiftId = 2,
+                            UserId = 6
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 12,
+                            ShiftId = 1,
+                            UserId = 7
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 13,
+                            ShiftId = 2,
+                            UserId = 8
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 14,
+                            ShiftId = 1,
+                            UserId = 9
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 15,
+                            ShiftId = 2,
+                            UserId = 10
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 16,
+                            ShiftId = 1,
+                            UserId = 11
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 17,
+                            ShiftId = 2,
+                            UserId = 6
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 18,
+                            ShiftId = 1,
+                            UserId = 7
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 19,
+                            ShiftId = 2,
+                            UserId = 8
+                        },
+                        new
+                        {
+                            ShiftAssignmentId = 20,
+                            ShiftId = 1,
+                            UserId = 9
+                        });
                 });
 
             modelBuilder.Entity("User", b =>

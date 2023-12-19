@@ -6,7 +6,13 @@ public class ApplicationContext : DbContext
 {
     public ApplicationContext()
     {
-        Database.EnsureCreated();
+        try{
+            Database.EnsureCreated();
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -16,8 +22,6 @@ public class ApplicationContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-    modelBuilder.Entity<OrderDish>()
-        .HasKey(od => new { od.OrderId, od.DishId });
 
     modelBuilder.Entity<Role>().HasData(
         new {RoleId = 1,RoleTitle = "Admin"},
@@ -106,36 +110,36 @@ public class ApplicationContext : DbContext
     );
 
     modelBuilder.Entity<OrderDish>().HasData(
-        new {DishId = 1, OrderId = 1, DishStatusId = 1},
-        new {DishId = 2, OrderId = 1, DishStatusId = 1},
-        new {DishId = 3, OrderId = 1, DishStatusId = 1},
-        new {DishId = 4, OrderId = 1, DishStatusId = 1},
-        new {DishId = 5, OrderId = 1, DishStatusId = 1},
-        new {DishId = 6, OrderId = 1, DishStatusId = 1},
-        new {DishId = 7, OrderId = 1, DishStatusId = 1},
-        new {DishId = 8, OrderId = 1, DishStatusId = 1},
-        new {DishId = 9, OrderId = 1, DishStatusId = 1},
-        new {DishId = 10, OrderId = 1, DishStatusId = 1},
-        new {DishId = 1, OrderId = 1, DishStatusId = 1},
-        new {DishId = 2, OrderId = 1, DishStatusId = 1},
-        new {DishId = 3, OrderId = 1, DishStatusId = 1},
-        new {DishId = 4, OrderId = 1, DishStatusId = 1},
-        new {DishId = 5, OrderId = 1, DishStatusId = 1},
-        new {DishId = 6, OrderId = 1, DishStatusId = 1},
-        new {DishId = 7, OrderId = 1, DishStatusId = 1},
-        new {DishId = 8, OrderId = 1, DishStatusId = 1},
-        new {DishId = 9, OrderId = 1, DishStatusId = 1},
-        new {DishId = 10, OrderId = 1, DishStatusId = 1},
-        new {DishId = 1, OrderId = 1, DishStatusId = 1},
-        new {DishId = 2, OrderId = 1, DishStatusId = 1},
-        new {DishId = 3, OrderId = 1, DishStatusId = 1},
-        new {DishId = 4, OrderId = 1, DishStatusId = 1},
-        new {DishId = 5, OrderId = 1, DishStatusId = 1},
-        new {DishId = 6, OrderId = 1, DishStatusId = 1},
-        new {DishId = 7, OrderId = 1, DishStatusId = 1},
-        new {DishId = 8, OrderId = 1, DishStatusId = 1},
-        new {DishId = 9, OrderId = 1, DishStatusId = 1},
-        new {DishId = 10, OrderId = 1, DishStatusId = 1}
+        new {OrderDishId = 1,DishId = 1, OrderId = 1, DishStatusId = 1},
+        new {OrderDishId = 2,DishId = 2, OrderId = 2, DishStatusId = 1},
+        new {OrderDishId = 3,DishId = 3, OrderId = 3, DishStatusId = 1},
+        new {OrderDishId = 4,DishId = 4, OrderId = 4, DishStatusId = 1},
+        new {OrderDishId = 5,DishId = 5, OrderId = 5, DishStatusId = 1},
+        new {OrderDishId = 6,DishId = 6, OrderId = 6, DishStatusId = 1},
+        new {OrderDishId = 7,DishId = 7, OrderId = 7, DishStatusId = 1},
+        new {OrderDishId = 8,DishId = 8, OrderId = 8, DishStatusId = 1},
+        new {OrderDishId = 9,DishId = 9, OrderId = 9, DishStatusId = 1},
+        new {OrderDishId = 10,DishId = 10, OrderId = 10, DishStatusId = 1},
+        new {OrderDishId = 11,DishId = 1, OrderId = 1, DishStatusId = 1},
+        new {OrderDishId = 12,DishId = 2, OrderId = 2, DishStatusId = 1},
+        new {OrderDishId = 13,DishId = 3, OrderId = 3, DishStatusId = 1},
+        new {OrderDishId = 14,DishId = 4, OrderId = 4, DishStatusId = 1},
+        new {OrderDishId = 15,DishId = 5, OrderId = 5, DishStatusId = 1},
+        new {OrderDishId = 16,DishId = 6, OrderId = 6, DishStatusId = 1},
+        new {OrderDishId = 17,DishId = 7, OrderId = 7, DishStatusId = 1},
+        new {OrderDishId = 18,DishId = 8, OrderId = 8, DishStatusId = 1},
+        new {OrderDishId = 19,DishId = 9, OrderId = 9, DishStatusId = 1},
+        new {OrderDishId = 20,DishId = 10, OrderId = 10, DishStatusId = 1},
+        new {OrderDishId = 21,DishId = 1, OrderId = 1, DishStatusId = 1},
+        new {OrderDishId = 22,DishId = 2, OrderId = 2, DishStatusId = 1},
+        new {OrderDishId = 23,DishId = 3, OrderId = 3, DishStatusId = 1},
+        new {OrderDishId = 24,DishId = 4, OrderId = 4, DishStatusId = 1},
+        new {OrderDishId = 25,DishId = 5, OrderId = 5, DishStatusId = 1},
+        new {OrderDishId = 26,DishId = 6, OrderId = 6, DishStatusId = 1},
+        new {OrderDishId = 27,DishId = 7, OrderId = 7, DishStatusId = 1},
+        new {OrderDishId = 28,DishId = 8, OrderId = 8, DishStatusId = 1},
+        new {OrderDishId = 29,DishId = 9, OrderId = 9, DishStatusId = 1},
+        new {OrderDishId = 30,DishId = 10, OrderId = 10, DishStatusId = 1}
     );
     }
 
