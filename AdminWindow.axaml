@@ -8,7 +8,7 @@
         Title="Страница администратора">
       <TabControl Margin="5">
         <TabItem Header="Регистрация пользователя" >
-            <StackPanel Orientation="Vertical"
+            <StackPanel Name="stackPanel" Orientation="Vertical"
                 Margin="25"
                 VerticalAlignment="Center" >
         <TextBox Name="LoginTBox"
@@ -29,11 +29,13 @@
         <TextBlock Text="kakashka 4" />
     </ComboBox.Items>
 </ComboBox>
-        <Button Content="Зарегистрироваться"
+        <Button Content="Зарегистрировать"
                 HorizontalAlignment="Center"
                 Margin="0 0 0 10"
                 Name="RegBtn"
                 />
+    <Button Click="OpenFile_Click">Открыть файл</Button>
+    <Image Width="50" Height="50" Name="UserImage"/>
     </StackPanel>
         </TabItem>
         <TabItem Header="Список пользователей" >
