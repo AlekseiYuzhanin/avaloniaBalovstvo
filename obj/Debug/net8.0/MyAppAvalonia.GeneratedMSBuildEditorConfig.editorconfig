@@ -17,8 +17,17 @@ build_property.ProjectDir = /home/alexey/avalon/MyAppAvalonia/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
+[/home/alexey/avalon/MyAppAvalonia/AdminWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/alexey/avalon/MyAppAvalonia/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/alexey/avalon/MyAppAvalonia/CookerWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/alexey/avalon/MyAppAvalonia/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/alexey/avalon/MyAppAvalonia/WaiterWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
