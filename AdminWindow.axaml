@@ -21,21 +21,30 @@
         <TextBox Name="NameTBox"
                  Watermark="Введите Пароль"
                  Margin="0 0 0 10"/>
-        <ComboBox x:Name="RoleComboBox" Margin="0 0 0 10">
-    <ComboBox.Items>
-        <TextBlock Text="kakashka 1" />
-        <TextBlock Text="kakashka 2" />
-        <TextBlock Text="kakashka 3" />
-        <TextBlock Text="kakashka 4" />
-    </ComboBox.Items>
-</ComboBox>
+        <ComboBox Name="RoleCBox">
+            
+        </ComboBox>
         <Button Content="Зарегистрировать"
                 HorizontalAlignment="Center"
                 Margin="0 0 0 10"
                 Name="RegBtn"
                 />
-    <Button Click="OpenFile_Click">Открыть файл</Button>
-    <Image Width="50" Height="50" Name="UserImage"/>
+    <Button HorizontalAlignment="Left"
+            Margin="0 0 0 10"
+            Click="OpenUser_Click">Вставить фото</Button>
+    <Image HorizontalAlignment="Left"
+        Margin="0 0 0 10" 
+        Width="50" 
+        Height="50" 
+        Name="UserImage"/>
+    <Button HorizontalAlignment="Left" 
+        Margin="0 0 0 10" 
+        Click="OpenContract_Click">Вставить контракт</Button>
+    <Image HorizontalAlignment="Left" 
+        Margin="0 0 0 10" 
+        Width="50" 
+        Height="50" 
+        Name="ContractImage"/>
     </StackPanel>
         </TabItem>
         <TabItem Header="Список пользователей" >

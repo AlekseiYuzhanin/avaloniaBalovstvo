@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="1024"
+        x:Class="MyAppAvalonia.ListBoxImpl"
+        Title="Страница повара">
+      <Grid>
+        <ComboBox Name="MyComboBox">
+
+        </ComboBox>
+        <DataGrid Margin="20"
+          IsReadOnly="True"
+          CanUserReorderColumns="True"
+          CanUserResizeColumns="True"
+          CanUserSortColumns="False"
+          GridLinesVisibility="All"
+          BorderThickness="1" BorderBrush="Gray">
+  <DataGrid.Columns>
+     <DataGridTextColumn Header="First Name"/>
+     <DataGridTextColumn Header="Last Name" />
+  </DataGrid.Columns>
+</DataGrid>
+    </Grid>
+</Window>

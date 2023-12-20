@@ -9,6 +9,7 @@
       "MyAppAvalonia/1.0.0": {
         "dependencies": {
           "Avalonia": "11.0.5",
+          "Avalonia.Controls.DataGrid": "11.0.5",
           "Avalonia.Desktop": "11.0.5",
           "Avalonia.Fonts.Inter": "11.0.5",
           "Avalonia.Themes.Fluent": "11.0.5",
@@ -92,6 +93,18 @@
         }
       },
       "Avalonia.BuildServices/0.0.29": {},
+      "Avalonia.Controls.DataGrid/11.0.5": {
+        "dependencies": {
+          "Avalonia": "11.0.5",
+          "Avalonia.Remote.Protocol": "11.0.5"
+        },
+        "runtime": {
+          "lib/net6.0/Avalonia.Controls.DataGrid.dll": {
+            "assemblyVersion": "11.0.5.0",
+            "fileVersion": "11.0.5.0"
+          }
+        }
+      },
       "Avalonia.Desktop/11.0.5": {
         "dependencies": {
           "Avalonia": "11.0.5",
@@ -1032,6 +1045,13 @@
       "sha512": "sha512-U4eJLQdoDNHXtEba7MZUCwrBErBTxFp6sUewXBOdAhU0Kwzwaa/EKFcYm8kpcysjzKtfB4S0S9n0uxKZFz/ikw==",
       "path": "avalonia.buildservices/0.0.29",
       "hashPath": "avalonia.buildservices.0.0.29.nupkg.sha512"
+    },
+    "Avalonia.Controls.DataGrid/11.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5ULaodkNkChEWE/xuRrSh6dpBExpvFDFSItdX7sDOxGqNwovaKk0+4HmzvXeQGntUeMsaAcDddZxoG+pUJ8PSA==",
+      "path": "avalonia.controls.datagrid/11.0.5",
+      "hashPath": "avalonia.controls.datagrid.11.0.5.nupkg.sha512"
     },
     "Avalonia.Desktop/11.0.5": {
       "type": "package",

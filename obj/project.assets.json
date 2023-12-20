@@ -102,6 +102,23 @@
           "buildTransitive/Avalonia.BuildServices.targets": {}
         }
       },
+      "Avalonia.Controls.DataGrid/11.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.5",
+          "Avalonia.Remote.Protocol": "11.0.5"
+        },
+        "compile": {
+          "lib/net6.0/Avalonia.Controls.DataGrid.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Avalonia.Controls.DataGrid.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Avalonia.Desktop/11.0.5": {
         "type": "package",
         "dependencies": {
@@ -1724,6 +1741,22 @@
         "tools/netstandard2.0/Avalonia.BuildServices.Collector.dll",
         "tools/netstandard2.0/Avalonia.BuildServices.dll",
         "tools/netstandard2.0/runtimeconfig.json"
+      ]
+    },
+    "Avalonia.Controls.DataGrid/11.0.5": {
+      "sha512": "5ULaodkNkChEWE/xuRrSh6dpBExpvFDFSItdX7sDOxGqNwovaKk0+4HmzvXeQGntUeMsaAcDddZxoG+pUJ8PSA==",
+      "type": "package",
+      "path": "avalonia.controls.datagrid/11.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "avalonia.controls.datagrid.11.0.5.nupkg.sha512",
+        "avalonia.controls.datagrid.nuspec",
+        "lib/net6.0/Avalonia.Controls.DataGrid.dll",
+        "lib/net6.0/Avalonia.Controls.DataGrid.xml",
+        "lib/netstandard2.0/Avalonia.Controls.DataGrid.dll",
+        "lib/netstandard2.0/Avalonia.Controls.DataGrid.xml"
       ]
     },
     "Avalonia.Desktop/11.0.5": {
@@ -3940,6 +3973,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Avalonia >= 11.0.5",
+      "Avalonia.Controls.DataGrid >= 11.0.5",
       "Avalonia.Desktop >= 11.0.5",
       "Avalonia.Fonts.Inter >= 11.0.5",
       "Avalonia.Themes.Fluent >= 11.0.5",
@@ -3988,6 +4022,10 @@
         "targetAlias": "net8.0",
         "dependencies": {
           "Avalonia": {
+            "target": "Package",
+            "version": "[11.0.5, )"
+          },
+          "Avalonia.Controls.DataGrid": {
             "target": "Package",
             "version": "[11.0.5, )"
           },

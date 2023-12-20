@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "fI9l9ntxUC/o3XWdwYrhEdh5rX+TTLVfDeIUXqO/S4BOdOB9jsCa9UhoK3K18aVr/4WOlCZZ6k/0i/p4EG3VtA==",
+  "dgSpecHash": "PyeOmnyIEQXf8p+2dFN+VK2/dwAzq0vLOSRfhVYUPd5njO1TpWMfK+T0XdA39CXHQn9wXcbT6k5nCpC6y7mWAA==",
   "success": true,
   "projectFilePath": "/home/alexey/avalon/MyAppAvalonia/MyAppAvalonia.csproj",
   "expectedPackageFiles": [
     "/home/alexey/.nuget/packages/avalonia/11.0.5/avalonia.11.0.5.nupkg.sha512",
     "/home/alexey/.nuget/packages/avalonia.angle.windows.natives/2.1.0.2023020321/avalonia.angle.windows.natives.2.1.0.2023020321.nupkg.sha512",
     "/home/alexey/.nuget/packages/avalonia.buildservices/0.0.29/avalonia.buildservices.0.0.29.nupkg.sha512",
+    "/home/alexey/.nuget/packages/avalonia.controls.datagrid/11.0.5/avalonia.controls.datagrid.11.0.5.nupkg.sha512",
     "/home/alexey/.nuget/packages/avalonia.desktop/11.0.5/avalonia.desktop.11.0.5.nupkg.sha512",
     "/home/alexey/.nuget/packages/avalonia.fonts.inter/11.0.5/avalonia.fonts.inter.11.0.5.nupkg.sha512",
     "/home/alexey/.nuget/packages/avalonia.freedesktop/11.0.5/avalonia.freedesktop.11.0.5.nupkg.sha512",
