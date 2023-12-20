@@ -9,6 +9,7 @@ using System.Reactive.Disposables;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
+using System.IO;
 
 namespace MyAppAvalonia;
 
@@ -33,9 +34,26 @@ private void InitializeComponent()
 {
     AvaloniaXamlLoader.Load(this);
     
+    userName = this.FindControl<TextBox>("NameTBox");
+    userLogin = this.FindControl<TextBox>("LoginTBox");
+    userPassword = this.FindControl<TextBox>("PasswordTBox");
+    roleComboBox = this.FindControl<ComboBox>("RoleCBox");
     imageUser = this.FindControl<Image>("UserImage");
     imageContract = this.FindControl<Image>("ContractImage");
-    roleComboBox = this.FindControl<ComboBox>("RoleCBox");
+
+    using (var context = new ApplicationContext())
+        {
+            List<string> Content = context.Users
+            .Include(u => u.Role)
+            .Select(u => u.Role.RoleTitle)
+            .Distinct()
+            .ToList();
+
+            foreach(string val in Content )
+            {
+                roleComboBox.Items.Add(val);
+            }
+        }
 }
 
     [Obsolete]
@@ -57,10 +75,24 @@ private void InitializeComponent()
             string[] result = await dialog.ShowAsync(this);
             imageContract.Source = new Avalonia.Media.Imaging.Bitmap(result[0]);
     }
-    
-    private void RegBtn_Click(object sender, RoutedEventArgs e)
+   
+   
+    private void RegBtn(object sender, RoutedEventArgs e)
     {
-
+        using(var context = new ApplicationContext())
+        {
+            var newUser = new User()
+            {
+                UserId = context.Users.Max(q=>q.UserId) + 1,
+                UserName = userName.Text,
+                UserLogin = userLogin.Text,
+                UserPassword = userPassword.Text,
+                Fired = false,
+                RoleId = roleComboBox.SelectedIndex + 1
+            };
+            context.Users.Add(newUser);
+            context.SaveChanges();
+        }
     }
 }
 

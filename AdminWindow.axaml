@@ -11,23 +11,21 @@
             <StackPanel Name="stackPanel" Orientation="Vertical"
                 Margin="25"
                 VerticalAlignment="Center" >
-        <TextBox Name="LoginTBox"
+        <TextBox Name="NameTBox"
                  Watermark="Введите Имя"
                  Margin="0 0 0 10"/>
-        <TextBox Name="PasswordTBox"
+        <TextBox Name="LoginTBox"
                  Watermark="Введите Логин"
-                 PasswordChar="*"
                  Margin="0 0 0 10"/>
-        <TextBox Name="NameTBox"
+        <TextBox Name="PasswordTBox"
                  Watermark="Введите Пароль"
                  Margin="0 0 0 10"/>
         <ComboBox Name="RoleCBox">
-            
         </ComboBox>
         <Button Content="Зарегистрировать"
                 HorizontalAlignment="Center"
                 Margin="0 0 0 10"
-                Name="RegBtn"
+                Click="RegBtn"
                 />
     <Button HorizontalAlignment="Left"
             Margin="0 0 0 10"

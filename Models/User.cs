@@ -13,9 +13,7 @@ public class User
     
     public string? UserPassword { get; set; }
 
-    [DefaultValue(true)] 
-
-    public bool Fired { get; set; }
+    public bool Fired { get; set; } = false;
     public byte[]? ProfilePicture { get; set; } 
 
     public byte[]? ContractPicture { get; set; } 
