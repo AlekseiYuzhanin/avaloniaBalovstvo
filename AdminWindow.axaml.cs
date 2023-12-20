@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Text;
 
 namespace MyAppAvalonia;
 
@@ -22,6 +23,8 @@ private TextBox userPassword;
 private ComboBox roleComboBox;
 private Image imageUser;
 private Image imageContract;
+private byte[] contractContainer;
+private byte[] profileContainer;
 public ObservableCollection<string> RolesList { get; }
 
 public AdminWindow()
@@ -64,6 +67,7 @@ private void InitializeComponent()
             dialog.Directory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             string[] result = await dialog.ShowAsync(this);
             imageUser.Source = new Avalonia.Media.Imaging.Bitmap(result[0]);
+            profileContainer = Encoding.Default.GetBytes(result[0]);
     }
 
     [Obsolete]
@@ -74,9 +78,9 @@ private void InitializeComponent()
             dialog.Directory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             string[] result = await dialog.ShowAsync(this);
             imageContract.Source = new Avalonia.Media.Imaging.Bitmap(result[0]);
+            contractContainer = Encoding.Default.GetBytes(result[0]);
     }
-   
-   
+
     private void RegBtn(object sender, RoutedEventArgs e)
     {
         using(var context = new ApplicationContext())
@@ -88,7 +92,9 @@ private void InitializeComponent()
                 UserLogin = userLogin.Text,
                 UserPassword = userPassword.Text,
                 Fired = false,
-                RoleId = roleComboBox.SelectedIndex + 1
+                RoleId = roleComboBox.SelectedIndex + 1,
+                ContractPicture = contractContainer,
+                ProfilePicture = profileContainer
             };
             context.Users.Add(newUser);
             context.SaveChanges();
