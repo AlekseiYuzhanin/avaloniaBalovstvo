@@ -5,13 +5,9 @@ using Avalonia.Markup.Xaml;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reactive.Disposables;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
-using System.IO;
 using System.Text;
-
 namespace MyAppAvalonia;
 
 public partial class AdminWindow : Window
@@ -99,6 +95,10 @@ private void InitializeComponent()
             context.Users.Add(newUser);
             context.SaveChanges();
         }
+
+        userName.Text = "";
+        userLogin.Text = "";
+        userPassword.Text = "";
     }
 }
 
