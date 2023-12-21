@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="1024"
         x:Class="MyAppAvalonia.WaiterWindow"
-        Title="Страница повара">
+        Title="Страница официанта">
       <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>

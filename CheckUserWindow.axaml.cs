@@ -39,17 +39,18 @@ public partial class CheckUserWindow : Window
     {
         InitializeComponent();
 
-        userName = this.FindControl<TextBlock>("ClientNameTBlock");
-        userLogin = this.FindControl<TextBlock>("DishTitleTBlock");
-        userPassword = this.FindControl<TextBlock>("DishPayedTBlock");
-        role = this.FindControl<TextBlock>("OrderTimeTBlock");
-        imageUser = this.FindControl<Image>("OrderTimeTBlock");
-        imageContract = this.FindControl<Image>("OrderTimeTBlock");
+        userName = this.FindControl<TextBlock>("NameTBox");
+        userLogin = this.FindControl<TextBlock>("LoginTBox");
+        userPassword = this.FindControl<TextBlock>("PasswordTBox");
+        role = this.FindControl<TextBlock>("RoleTBox");
+        imageUser = this.FindControl<Image>("UserImage");
+        imageContract = this.FindControl<Image>("ContractImage");
         this.editUser = edituser;
 
-        userName.Text = editUser.Order.ClientName;
-        dishTitle.Text = editUser.Dish.DishTitle;
-        ordertime.Text = editUser.Order.OrderTime.ToString();
+        userName.Text = editUser.UserName;
+        userLogin.Text = editUser.UserLogin;
+        userPassword.Text = editUser.UserPassword;
+        role.Text = editUser.Role.RoleTitle;
     }
 
     private async void OpenUser_Click(object sender, RoutedEventArgs e)

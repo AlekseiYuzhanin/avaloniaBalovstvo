@@ -28,8 +28,7 @@
                  Margin="0 0 0 10" Grid.Row="1"/>
         <TextBlock Name="PasswordTBox"
                  Margin="0 0 0 10" Grid.Row="2"/>
-        <TextBlock Name="RoleTBox" Grid.Row="3">
-        </ComboBox>
+        <TextBlock Name="RoleTBox" Grid.Row="3"/>
     <Button HorizontalAlignment="Left"
             Margin="0 0 0 10"
             Click="OpenUser_Click" Grid.Row="4">Вставить фото</Button>
