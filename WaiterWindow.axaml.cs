@@ -16,7 +16,6 @@ public partial class WaiterWindow : Window
     public WaiterWindow()
     {
         InitializeComponent();
-        ApplicationContext applicationContext = new ApplicationContext();
     }
 
      private void InitializeComponent()

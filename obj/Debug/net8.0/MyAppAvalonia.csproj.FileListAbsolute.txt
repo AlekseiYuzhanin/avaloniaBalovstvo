@@ -157,3 +157,8 @@
 /home/alexey/avalon/MyAppAvalonia/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /home/alexey/avalon/MyAppAvalonia/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /home/alexey/avalon/MyAppAvalonia/bin/Debug/net8.0/Avalonia.Controls.DataGrid.dll
+/home/alexey/avalon/MyAppAvalonia/bin/Debug/net8.0/PdfSharpCore.dll
+/home/alexey/avalon/MyAppAvalonia/bin/Debug/net8.0/ICSharpCode.SharpZipLib.dll
+/home/alexey/avalon/MyAppAvalonia/bin/Debug/net8.0/SixLabors.Fonts.dll
+/home/alexey/avalon/MyAppAvalonia/bin/Debug/net8.0/SixLabors.ImageSharp.dll
+/home/alexey/avalon/MyAppAvalonia/bin/Debug/net8.0/de/PdfSharpCore.resources.dll

@@ -15,11 +15,36 @@
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <TextBlock Name="NameTBox"
+                 Margin="0 0 0 10" Grid.Row="0"/>
+        <TextBlock Name="LoginTBox"
+                 Margin="0 0 0 10" Grid.Row="1"/>
+        <TextBlock Name="PasswordTBox"
+                 Margin="0 0 0 10" Grid.Row="2"/>
+        <TextBlock Name="RoleTBox" Grid.Row="3">
+        </ComboBox>
+    <Button HorizontalAlignment="Left"
+            Margin="0 0 0 10"
+            Click="OpenUser_Click" Grid.Row="4">Вставить фото</Button>
+    <Image HorizontalAlignment="Left"
+        Margin="0 0 0 10" 
+        Width="50" 
+        Height="50" 
+        Name="UserImage" Grid.Row="5"/>
+    <Button HorizontalAlignment="Left" 
+        Margin="0 0 0 10" 
+        Click="OpenContract_Click" Grid.Row="6">Вставить контракт</Button>
+    <Image HorizontalAlignment="Left" 
+        Margin="0 0 0 10" 
+        Width="50" 
+        Height="50" 
+        Name="ContractImage" Grid.Row="7"/>
     </Grid>
 </Window>

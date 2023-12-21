@@ -7,19 +7,27 @@
         Title="Страница повара">
       <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 10" Name="ClientNameTBlock" Grid.Column="1" Grid.Row="0"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 10" Name="OrderTimeTBlock" Grid.Column="1" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0 0 0 10" Name="DishTitleTBlock" Grid.Column="1" Grid.Row="2"/>
+        <CheckBox HorizontalAlignment="Center" Margin="0 0 0 10" Name="DishPayedTBlock" Grid.Column="1" Grid.Row="3"/>
+<Button 
+        Background="Purple" Margin="0 0 0 10" Content="Изменение статуса" 
+        HorizontalContentAlignment="Center" CornerRadius="50" Height="30" Width="200" 
+        HorizontalAlignment="Center" Click="EditBtn" Grid.Row="6" Grid.Column="1"/>    
     </Grid>
 </Window>

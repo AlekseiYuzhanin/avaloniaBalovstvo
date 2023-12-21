@@ -161,7 +161,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 1,
                             ClientName = "Client 1",
-                            OrderTime = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8568),
+                            OrderTime = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5169),
                             Payed = false,
                             ShiftId = 1
                         },
@@ -169,7 +169,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 2,
                             ClientName = "Client 2",
-                            OrderTime = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8570),
+                            OrderTime = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5171),
                             Payed = true,
                             ShiftId = 2
                         },
@@ -177,7 +177,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 3,
                             ClientName = "Client 3",
-                            OrderTime = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8570),
+                            OrderTime = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5172),
                             Payed = true,
                             ShiftId = 3
                         },
@@ -185,7 +185,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 4,
                             ClientName = "Client 4",
-                            OrderTime = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8571),
+                            OrderTime = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5173),
                             Payed = true,
                             ShiftId = 4
                         },
@@ -193,7 +193,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 5,
                             ClientName = "Client 5",
-                            OrderTime = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8572),
+                            OrderTime = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5173),
                             Payed = true,
                             ShiftId = 1
                         },
@@ -201,7 +201,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 6,
                             ClientName = "Client 6",
-                            OrderTime = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8573),
+                            OrderTime = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5174),
                             Payed = true,
                             ShiftId = 2
                         },
@@ -209,7 +209,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 7,
                             ClientName = "Client 7",
-                            OrderTime = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8573),
+                            OrderTime = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5175),
                             Payed = true,
                             ShiftId = 3
                         },
@@ -217,7 +217,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 8,
                             ClientName = "Client 8",
-                            OrderTime = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8574),
+                            OrderTime = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5176),
                             Payed = true,
                             ShiftId = 4
                         },
@@ -225,7 +225,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 9,
                             ClientName = "Client 9",
-                            OrderTime = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8575),
+                            OrderTime = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5177),
                             Payed = false,
                             ShiftId = 5
                         },
@@ -233,7 +233,7 @@ namespace MyAppAvalonia.Migrations
                         {
                             OrderId = 10,
                             ClientName = "Client 10",
-                            OrderTime = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8575),
+                            OrderTime = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5177),
                             Payed = false,
                             ShiftId = 6
                         });
@@ -537,44 +537,44 @@ namespace MyAppAvalonia.Migrations
                         new
                         {
                             ShiftId = 1,
-                            ShiftDate = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8501),
-                            ShiftTimeEnd = new DateTime(2023, 12, 21, 15, 53, 49, 220, DateTimeKind.Utc).AddTicks(8509),
-                            ShiftTimeStart = new DateTime(2023, 12, 21, 9, 53, 49, 220, DateTimeKind.Utc).AddTicks(8502)
+                            ShiftDate = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5113),
+                            ShiftTimeEnd = new DateTime(2023, 12, 21, 17, 43, 47, 588, DateTimeKind.Utc).AddTicks(5120),
+                            ShiftTimeStart = new DateTime(2023, 12, 21, 11, 43, 47, 588, DateTimeKind.Utc).AddTicks(5114)
                         },
                         new
                         {
                             ShiftId = 2,
-                            ShiftDate = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8511),
-                            ShiftTimeEnd = new DateTime(2023, 12, 21, 15, 53, 49, 220, DateTimeKind.Utc).AddTicks(8511),
-                            ShiftTimeStart = new DateTime(2023, 12, 21, 9, 53, 49, 220, DateTimeKind.Utc).AddTicks(8511)
+                            ShiftDate = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5121),
+                            ShiftTimeEnd = new DateTime(2023, 12, 21, 17, 43, 47, 588, DateTimeKind.Utc).AddTicks(5122),
+                            ShiftTimeStart = new DateTime(2023, 12, 21, 11, 43, 47, 588, DateTimeKind.Utc).AddTicks(5122)
                         },
                         new
                         {
                             ShiftId = 3,
-                            ShiftDate = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8512),
-                            ShiftTimeEnd = new DateTime(2023, 12, 21, 15, 53, 49, 220, DateTimeKind.Utc).AddTicks(8513),
-                            ShiftTimeStart = new DateTime(2023, 12, 21, 9, 53, 49, 220, DateTimeKind.Utc).AddTicks(8513)
+                            ShiftDate = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5123),
+                            ShiftTimeEnd = new DateTime(2023, 12, 21, 17, 43, 47, 588, DateTimeKind.Utc).AddTicks(5124),
+                            ShiftTimeStart = new DateTime(2023, 12, 21, 11, 43, 47, 588, DateTimeKind.Utc).AddTicks(5123)
                         },
                         new
                         {
                             ShiftId = 4,
-                            ShiftDate = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8514),
-                            ShiftTimeEnd = new DateTime(2023, 12, 21, 15, 53, 49, 220, DateTimeKind.Utc).AddTicks(8515),
-                            ShiftTimeStart = new DateTime(2023, 12, 21, 9, 53, 49, 220, DateTimeKind.Utc).AddTicks(8514)
+                            ShiftDate = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5124),
+                            ShiftTimeEnd = new DateTime(2023, 12, 21, 17, 43, 47, 588, DateTimeKind.Utc).AddTicks(5125),
+                            ShiftTimeStart = new DateTime(2023, 12, 21, 11, 43, 47, 588, DateTimeKind.Utc).AddTicks(5125)
                         },
                         new
                         {
                             ShiftId = 5,
-                            ShiftDate = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8516),
-                            ShiftTimeEnd = new DateTime(2023, 12, 21, 15, 53, 49, 220, DateTimeKind.Utc).AddTicks(8516),
-                            ShiftTimeStart = new DateTime(2023, 12, 21, 9, 53, 49, 220, DateTimeKind.Utc).AddTicks(8516)
+                            ShiftDate = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5126),
+                            ShiftTimeEnd = new DateTime(2023, 12, 21, 17, 43, 47, 588, DateTimeKind.Utc).AddTicks(5127),
+                            ShiftTimeStart = new DateTime(2023, 12, 21, 11, 43, 47, 588, DateTimeKind.Utc).AddTicks(5126)
                         },
                         new
                         {
                             ShiftId = 6,
-                            ShiftDate = new DateTime(2023, 12, 21, 5, 53, 49, 220, DateTimeKind.Utc).AddTicks(8517),
-                            ShiftTimeEnd = new DateTime(2023, 12, 21, 15, 53, 49, 220, DateTimeKind.Utc).AddTicks(8518),
-                            ShiftTimeStart = new DateTime(2023, 12, 21, 9, 53, 49, 220, DateTimeKind.Utc).AddTicks(8518)
+                            ShiftDate = new DateTime(2023, 12, 21, 7, 43, 47, 588, DateTimeKind.Utc).AddTicks(5128),
+                            ShiftTimeEnd = new DateTime(2023, 12, 21, 17, 43, 47, 588, DateTimeKind.Utc).AddTicks(5128),
+                            ShiftTimeStart = new DateTime(2023, 12, 21, 11, 43, 47, 588, DateTimeKind.Utc).AddTicks(5128)
                         });
                 });
 

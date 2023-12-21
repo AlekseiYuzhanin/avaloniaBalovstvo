@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PyeOmnyIEQXf8p+2dFN+VK2/dwAzq0vLOSRfhVYUPd5njO1TpWMfK+T0XdA39CXHQn9wXcbT6k5nCpC6y7mWAA==",
+  "dgSpecHash": "XjjV5tK/nqCje4rl9a+umh1fKOudx4bAbyT+mfGyVseQcHMUl0WdWnB/RiJVon3lwjVh5kPWxVlk+ZbNWGyXhg==",
   "success": true,
   "projectFilePath": "/home/alexey/avalon/MyAppAvalonia/MyAppAvalonia.csproj",
   "expectedPackageFiles": [
@@ -54,6 +54,10 @@
     "/home/alexey/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/home/alexey/.nuget/packages/npgsql/8.0.1/npgsql.8.0.1.nupkg.sha512",
     "/home/alexey/.nuget/packages/npgsql.entityframeworkcore.postgresql/8.0.0/npgsql.entityframeworkcore.postgresql.8.0.0.nupkg.sha512",
+    "/home/alexey/.nuget/packages/pdfsharpcore/1.3.62/pdfsharpcore.1.3.62.nupkg.sha512",
+    "/home/alexey/.nuget/packages/sharpziplib/1.3.3/sharpziplib.1.3.3.nupkg.sha512",
+    "/home/alexey/.nuget/packages/sixlabors.fonts/1.0.0-beta17/sixlabors.fonts.1.0.0-beta17.nupkg.sha512",
+    "/home/alexey/.nuget/packages/sixlabors.imagesharp/1.0.4/sixlabors.imagesharp.1.0.4.nupkg.sha512",
     "/home/alexey/.nuget/packages/skiasharp/2.88.6/skiasharp.2.88.6.nupkg.sha512",
     "/home/alexey/.nuget/packages/skiasharp.nativeassets.linux/2.88.6/skiasharp.nativeassets.linux.2.88.6.nupkg.sha512",
     "/home/alexey/.nuget/packages/skiasharp.nativeassets.macos/2.88.6/skiasharp.nativeassets.macos.2.88.6.nupkg.sha512",

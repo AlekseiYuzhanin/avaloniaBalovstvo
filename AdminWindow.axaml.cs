@@ -13,6 +13,8 @@ using Avalonia.Input;
 using Avalonia.VisualTree;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Enums;
+ using PdfSharpCore.Drawing;
+using PdfSharpCore.Pdf;
 
 namespace MyAppAvalonia;
 
@@ -126,7 +128,6 @@ private void InitializeComponent()
     private async void EditHandler(object sender, RoutedEventArgs e)
     {
         User? selectedUser = usersDGrid.SelectedItem as User;
-        // Если элемент выбран
         if (selectedUser != null)
         {
             await new CheckUserWindow(selectedUser).ShowDialog(this);
@@ -136,6 +137,7 @@ private void InitializeComponent()
             }
         }
     }
+
 }
 
 
