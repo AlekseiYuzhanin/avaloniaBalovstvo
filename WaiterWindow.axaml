@@ -6,20 +6,38 @@
         x:Class="MyAppAvalonia.WaiterWindow"
         Title="Страница официанта">
       <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
-            <RowDefinition Height="100"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-    </Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition ></RowDefinition>
+        <RowDefinition ></RowDefinition>
+        <RowDefinition Height="Auto"></RowDefinition> <!-- Добавленная строка -->
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+    <StackPanel Grid.Row="0" Orientation="Vertical">
+        <DataGrid 
+              x:Name="OrderDGrid"
+              ColumnWidth="*" HorizontalAlignment="Center" AutoGenerateColumns="False"
+              CanUserReorderColumns="False"
+              CanUserResizeColumns="False" IsReadOnly="True">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Имя клиента" 
+                                    Binding="{Binding Order.ClientName}"
+                                    Width="*" />
+                <DataGridTextColumn Header="Время заказа" 
+                                    Binding="{Binding Order.OrderTime}"
+                                    Width="*"/>
+                <DataGridCheckBoxColumn Header="Заплачено?" 
+                                    Binding="{Binding Order.Payed}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Название блюда" 
+                                    Binding="{Binding Dish.DishTitle}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Цена" 
+                                    Binding="{Binding Dish.DishPrice}"
+                                    Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Grid>
 </Window>

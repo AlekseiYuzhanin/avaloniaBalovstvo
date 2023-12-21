@@ -13,9 +13,17 @@ namespace MyAppAvalonia;
 
 public partial class WaiterWindow : Window
 {
+
+    private DataGrid orderDGrid;
+
     public WaiterWindow()
     {
         InitializeComponent();
+        orderDGrid = this.FindControl<DataGrid>("OrderDGrid");
+        using(var context = new ApplicationContext())
+    {
+        orderDGrid.ItemsSource = context.OrderDishes.Include(o => o.Order).Include(o=> o.DishStatus).Include(o => o.Dish).ToList();  
+    }   
     }
 
      private void InitializeComponent()
