@@ -136,7 +136,7 @@ private void InitializeComponent()
             }
         }
     }
-    }
+}
 
 
 
