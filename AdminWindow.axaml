@@ -3,6 +3,7 @@
         xmlns:input="clr-namespace:Avalonia.Input;assembly=Avalonia.Input"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyAppAvalonia.User"
         mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="1024"
         x:Class="MyAppAvalonia.AdminWindow"
         Title="Страница администратора">
@@ -46,7 +47,15 @@
     </StackPanel>
         </TabItem>
         <TabItem Header="Список пользователей" >
-            <TextBlock Margin="5">This is tab 2 content</TextBlock>
+            <DataGrid 
+                  x:Name="UsersDGrid"
+                  ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Логин" 
+                                    Binding="{Binding UserLogin}"
+                                    Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
         </TabItem>
         <TabItem Header="Tab 3">
             <TextBlock Margin="5">This is tab 3 content</TextBlock>

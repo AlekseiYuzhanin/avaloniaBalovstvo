@@ -8,6 +8,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Reactive.Linq;
 namespace MyAppAvalonia;
 
 public partial class AdminWindow : Window
@@ -21,12 +22,17 @@ private Image imageUser;
 private Image imageContract;
 private byte[] contractContainer;
 private byte[] profileContainer;
-public ObservableCollection<string> RolesList { get; }
-
+private DataGrid usersDGrid;
 public AdminWindow()
 {
     InitializeComponent();
+    
 
+    usersDGrid = this.FindControl<DataGrid>("UsersDGrid");
+    using(var context = new ApplicationContext())
+    {
+        usersDGrid.ItemsSource = context.Users.Include(u=>u.Role).ToList();
+    }
 }
 
 private void InitializeComponent()
@@ -52,8 +58,10 @@ private void InitializeComponent()
             {
                 roleComboBox.Items.Add(val);
             }
+
         }
 }
+
 
     [Obsolete]
     private async void OpenUser_Click(object sender, RoutedEventArgs e)
@@ -63,7 +71,7 @@ private void InitializeComponent()
             dialog.Directory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             string[] result = await dialog.ShowAsync(this);
             imageUser.Source = new Avalonia.Media.Imaging.Bitmap(result[0]);
-            profileContainer = Encoding.Default.GetBytes(result[0]);
+            profileContainer = Encoding.UTF8.GetBytes(result[0]);
     }
 
     [Obsolete]
@@ -100,6 +108,7 @@ private void InitializeComponent()
         userLogin.Text = "";
         userPassword.Text = "";
     }
+
 }
 
 
