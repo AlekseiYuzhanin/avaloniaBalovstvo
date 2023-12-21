@@ -11,6 +11,8 @@ using System.Text;
 using System.Reactive.Linq;
 using Avalonia.Input;
 using Avalonia.VisualTree;
+using MsBox.Avalonia;
+using MsBox.Avalonia.Enums;
 
 namespace MyAppAvalonia;
 
@@ -26,16 +28,21 @@ private Image imageContract;
 private byte[] contractContainer;
 private byte[] profileContainer;
 private DataGrid usersDGrid;
+private DataGrid shiftDGrid;
+private DataGrid orderDGrid;
 public AdminWindow()
 {
     InitializeComponent();
     
     usersDGrid = this.FindControl<DataGrid>("UsersDGrid");
+    shiftDGrid = this.FindControl<DataGrid>("ShiftDGrid");
+    orderDGrid = this.FindControl<DataGrid>("OrderDGrid");
     using(var context = new ApplicationContext())
     {
         usersDGrid.ItemsSource = context.Users.Include(u=>u.Role).ToList();
+        shiftDGrid.ItemsSource = context.ShiftAssignments.Include(s => s.User).Include(s => s.Shift).ToList();  
+        orderDGrid.ItemsSource = context.OrderDishes.Include(o => o.Order).Include(o=> o.DishStatus).Include(o => o.Dish).ToList();  
     }
-
 }
 
 private void InitializeComponent()
@@ -92,6 +99,9 @@ private void InitializeComponent()
     {
         using(var context = new ApplicationContext())
         {
+            var successRegistrationBox = MessageBoxManager
+            .GetMessageBoxStandard("Успешно!", "пользователь был зарегистрирован",
+                ButtonEnum.OkCancel);
             var newUser = new User()
             {
                 UserId = context.Users.Max(q=>q.UserId) + 1,
@@ -105,16 +115,28 @@ private void InitializeComponent()
             };
             context.Users.Add(newUser);
             context.SaveChanges();
+            var result = successRegistrationBox.ShowAsync();
         }
 
         userName.Text = "";
         userLogin.Text = "";
         userPassword.Text = "";
     }
-
-
     
+    private async void EditHandler(object sender, RoutedEventArgs e)
+    {
+        User? selectedUser = usersDGrid.SelectedItem as User;
+        // Если элемент выбран
+        if (selectedUser != null)
+        {
+            await new CheckUserWindow(selectedUser).ShowDialog(this);
+            using(var context = new ApplicationContext())
+            {
+                usersDGrid.ItemsSource = context.Users.Include(q=>q.Role).ToList();
+            }
+        }
+    }
+    }
 
-}
 
 

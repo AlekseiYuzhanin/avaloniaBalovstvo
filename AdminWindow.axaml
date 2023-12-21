@@ -45,33 +45,87 @@
         Name="ContractImage"/>
     </StackPanel>
         </TabItem>
-        <TabItem Header="Список пользователей" >
+        <TabItem Header="Пользователи" >
+            <StackPanel Orientation="Vertical">
             <DataGrid 
                   x:Name="UsersDGrid"
                   ColumnWidth="*" HorizontalAlignment="Center" AutoGenerateColumns="False"
                   CanUserReorderColumns="False"
-                  CanUserResizeColumns="False" IsReadOnly="True" DoubleTapped="ItemsGrid_MouseDoubleClick">
+                  CanUserResizeColumns="False" IsReadOnly="True">
             <DataGrid.Columns >
-                <DataGridTextColumn Header="Логин" 
+                <DataGridTextColumn Header="Имя" 
                                     Binding="{Binding UserName}"
                                     Width="*" />
                 <DataGridTextColumn Header="Логин" 
                                     Binding="{Binding UserLogin}"
                                     Width="*"/>
-                <DataGridTextColumn Header="Логин" 
+                <DataGridTextColumn Header="Пароль" 
                                     Binding="{Binding UserPassword}"
                                     Width="*"/>
-                <DataGridCheckBoxColumn Header="Логин" 
+                <DataGridCheckBoxColumn Header="Уволен?" 
                                     Binding="{Binding Fired}"
                                     Width="*"/>
-                <DataGridTextColumn Header="Логин" 
+                <DataGridTextColumn Header="Должность" 
                                     Binding="{Binding Role.RoleTitle}"
                                     Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button Background="Purple" Margin="0 0 0 10" Content="Вход" HorizontalContentAlignment="Center" CornerRadius="50" Height="30" Width="150" HorizontalAlignment="Center" Click="EditHandler"/>
+        </StackPanel>
         </TabItem>
-        <TabItem Header="Tab 3">
-            <TextBlock Margin="5">This is tab 3 content</TextBlock>
+        <TabItem Header="Смены">
+            <StackPanel Orientation="Vertical">
+            <DataGrid 
+                  x:Name="ShiftDGrid"
+                  ColumnWidth="*" HorizontalAlignment="Center" AutoGenerateColumns="False"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False" IsReadOnly="True">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Текущая дата" 
+                                    Binding="{Binding Shift.ShiftDate, StringFormat=yy.MM.dd}"
+                                    Width="*" />
+                <DataGridTextColumn Header="Начало смены" 
+                                    Binding="{Binding Shift.ShiftTimeStart}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Конец смены" 
+                                    Binding="{Binding Shift.ShiftTimeEnd}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Имя" 
+                                    Binding="{Binding User.UserName}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Должность" 
+                                    Binding="{Binding User.Role.RoleTitle}"
+                                    Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        </StackPanel>
+        </TabItem>
+        <TabItem Header="Заказы">
+            <StackPanel Orientation="Vertical">
+            <DataGrid 
+                  x:Name="OrderDGrid"
+                  ColumnWidth="*" HorizontalAlignment="Center" AutoGenerateColumns="False"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False" IsReadOnly="True">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Имя клиента" 
+                                    Binding="{Binding Order.ClientName}"
+                                    Width="*" />
+                <DataGridTextColumn Header="Время заказа" 
+                                    Binding="{Binding Order.OrderTime}"
+                                    Width="*"/>
+                <DataGridCheckBoxColumn Header="Заплачено?" 
+                                    Binding="{Binding Order.Payed}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Название блюда" 
+                                    Binding="{Binding Dish.DishTitle}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Готовность" 
+                                    Binding="{Binding DishStatus.StatusTitle}"
+                                    Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        </StackPanel>
         </TabItem>
         </TabControl>
 </Window>

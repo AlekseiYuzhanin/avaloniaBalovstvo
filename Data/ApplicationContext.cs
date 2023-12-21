@@ -80,10 +80,8 @@ public class ApplicationContext : DbContext
     );
 
     modelBuilder.Entity<DishStatus>().HasData(
-        new {DishStatusId = 1, DishStatusTitle="Принят"},
-        new {DishStatusId = 2, DishStatusTitle="Отказ"},
-        new {DishStatusId = 3, DishStatusTitle="Готовится"},
-        new {DishStatusId = 4, DishStatusTitle="Приготовлен"}
+        new {DishStatusId = 1, StatusTitle="Готовится"},
+        new {DishStatusId = 2, StatusTitle="Приготовлен"}
     );
 
     modelBuilder.Entity<ShiftAssignment>().HasData(

@@ -39,7 +39,6 @@ public partial class MainWindow : Window
             if(user.Role.RoleTitle.ToString() == "Admin")
             {
                 new AdminWindow().Show();
-                new ListBoxImpl().Show();
                 Close();
             }
             if(user.Role.RoleTitle.ToString() == "Waiter")
