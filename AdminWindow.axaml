@@ -3,7 +3,6 @@
         xmlns:input="clr-namespace:Avalonia.Input;assembly=Avalonia.Input"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MyAppAvalonia.User"
         mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="1024"
         x:Class="MyAppAvalonia.AdminWindow"
         Title="Страница администратора">
@@ -49,11 +48,25 @@
         <TabItem Header="Список пользователей" >
             <DataGrid 
                   x:Name="UsersDGrid"
-                  ColumnWidth="*">
-            <DataGrid.Columns>
+                  ColumnWidth="*" HorizontalAlignment="Center" AutoGenerateColumns="False"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False" IsReadOnly="True" DoubleTapped="ItemsGrid_MouseDoubleClick">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Логин" 
+                                    Binding="{Binding UserName}"
+                                    Width="*" />
                 <DataGridTextColumn Header="Логин" 
                                     Binding="{Binding UserLogin}"
-                                    Width="100"/>
+                                    Width="*"/>
+                <DataGridTextColumn Header="Логин" 
+                                    Binding="{Binding UserPassword}"
+                                    Width="*"/>
+                <DataGridCheckBoxColumn Header="Логин" 
+                                    Binding="{Binding Fired}"
+                                    Width="*"/>
+                <DataGridTextColumn Header="Логин" 
+                                    Binding="{Binding Role.RoleTitle}"
+                                    Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         </TabItem>

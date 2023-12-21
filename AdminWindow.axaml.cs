@@ -9,6 +9,9 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Reactive.Linq;
+using Avalonia.Input;
+using Avalonia.VisualTree;
+
 namespace MyAppAvalonia;
 
 public partial class AdminWindow : Window
@@ -27,12 +30,12 @@ public AdminWindow()
 {
     InitializeComponent();
     
-
     usersDGrid = this.FindControl<DataGrid>("UsersDGrid");
     using(var context = new ApplicationContext())
     {
         usersDGrid.ItemsSource = context.Users.Include(u=>u.Role).ToList();
     }
+
 }
 
 private void InitializeComponent()
@@ -108,6 +111,9 @@ private void InitializeComponent()
         userLogin.Text = "";
         userPassword.Text = "";
     }
+
+
+    
 
 }
 
